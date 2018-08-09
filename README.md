@@ -1,4 +1,4 @@
-# GodotTIE
+# TG
 A simple Text Interface Engine to control text output (like in a RPG dialogue) for Godot.
 
 The "Cave-Story" font was created by enigmansmp1824; it's CC-BY-SA licensed, and can be found in https://fontlibrary.org/pt/font/cave-story.
@@ -32,24 +32,24 @@ Done!
 
 ## Updates:
 * 13/03/18:
-	* Merged dalton5000 pull-request: Added Godot 3.x compatibility!
-	* Added new branch for Godot 2.x version of the addon.
+  * Merged dalton5000 pull-request: Added Godot 3.x compatibility!
+  * Added new branch for Godot 2.x version of the addon.
 * 10/10/17:
-	* Corrected Issue of last lines not appearing on very large texts.
+  * Corrected Issue of last lines not appearing on very large texts.
 * 10/05/17:
-	* Merged radicaled pull-request: Added "buff_clear" as a new buff to reset the text.
+  * Merged radicaled pull-request: Added "buff_clear" as a new buff to reset the text.
 * 30/04/17:
-	* Merged radicaled pull-request: Changed add_user_signal to signal keyword.
+  * Merged radicaled pull-request: Changed add_user_signal to signal keyword.
 * 08/12/16:
-	* Font-overriding bug (max_lines) corrected by David Paiva!
-	* Since Addons on Godot are gold since v.2.0, I deleted the old GodotTIE folder to make the addon easier to understand and install - also updated the project Icon and scene file.
+  * Font-overriding bug (max_lines) corrected by David Paiva!
+  * Since Addons on Godot are gold since v.2.0, I deleted the old GodotTIE folder to make the addon easier to understand and install - also updated the project Icon and scene file.
 * 26/11/16:
-	* Corrected bug with "set_buff_speed". Thanks David Paiva!
+  * Corrected bug with "set_buff_speed". Thanks David Paiva!
 * 26/02/16:
-	* Changed the "buffs" to dictionaries, to increase readability.
-	* Fixed bug with "tag" signals (should only call it once).
+  * Changed the "buffs" to dictionaries, to increase readability.
+  * Fixed bug with "tag" signals (should only call it once).
 * 25/02/16:
-	* Setup of the finished project on GitHub.
+  * Setup of the finished project on GitHub.
 
 ## License:
 
