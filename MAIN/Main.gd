@@ -25,10 +25,12 @@ func _input(event):
 		var scene = preload("res://BATIMENT/Laboratoire.tscn")
 		var node = scene.instance()
 		add_child(node)
-#	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.is_pressed() :
 
 func isBuildable(var Batiment):
-	if Batiment.pos.y >= 2:
+	print("Batiment.pos = ", Batiment.pos)
+	if Batiment.pos.x >= 0 and Batiment.pos.x <= 9 and Batiment.pos.y >= 0 and Batiment.pos.y <= 4:
+		print("Grid = ", Grid[Batiment.pos.x][Batiment.pos.y])
+	if Batiment.pos.y >= 1:
 		return true
 	else :
 		return false

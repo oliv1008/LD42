@@ -19,6 +19,10 @@ func _ready():
 func _input(event):
 	if state == 0 and event is InputEventMouseMotion:
 		pos = get_global_mouse_position()
+		if pos.x < 0:
+			pos.x -= 64
+		if pos.y < 0:
+			pos.y -= 64
 		pos.x = int(pos.x / 64)
 		pos.y = int(-pos.y / 64)
 		print(pos)

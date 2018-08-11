@@ -103,7 +103,7 @@ func _physics_process(delta):
 	camera_movement = Vector2(0,0)
 	_prev_mouse_pos = get_local_mouse_position()
 
-func _unhandled_input(event):
+func _input(event):
 	if event is InputEventMouseButton :
 		if event.is_action_pressed("CameraSlide") and drag:
 			__rmbk = true
