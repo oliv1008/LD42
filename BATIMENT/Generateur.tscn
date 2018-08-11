@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://BATIMENT/Laboratoire.gd" type="Script" id=1]
+[ext_resource path="res://BATIMENT/Generateur.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
-[node name="Laboratoire" type="Node2D"]
+[node name="Generateur" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -14,20 +14,20 @@ _sections_unfolded = [ "Animation", "Material", "Transform", "Visibility" ]
 
 [node name="Sprite2" type="Sprite" parent="." index="1"]
 
-position = Vector2( 0, -64 )
+position = Vector2( 64, 0 )
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Animation", "Material", "Transform", "Visibility" ]
 
 [node name="Sprite3" type="Sprite" parent="." index="2"]
 
-position = Vector2( 0, -128 )
+position = Vector2( 128, 0 )
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Animation", "Material", "Transform", "Visibility" ]
 
 [node name="Sprite4" type="Sprite" parent="." index="3"]
 
-position = Vector2( 0, -192 )
+position = Vector2( 192, 0 )
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Animation", "Material", "Transform", "Visibility" ]
 
 

@@ -96,8 +96,8 @@ func _physics_process(delta):
 	
 	# Update position of the camera.
 	position += camera_movement * get_zoom()
-	position.x = clamp(position.x, 0, 10000)
-	position.y = clamp(position.y, -10000, 100)
+	position.x = clamp(position.x, 0, 100000)
+	position.y = clamp(position.y, -100000, -32 * 4 * get_zoom().y * get_zoom().y)
 	
 	# Set camera movement to zero, update old mouse position.
 	camera_movement = Vector2(0,0)

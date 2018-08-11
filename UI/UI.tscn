@@ -60,7 +60,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Laboratory" type="Button" parent="BatimentsContainrer" index="0"]
+[node name="Mine" type="Button" parent="BatimentsContainrer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -77,14 +77,14 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 toggle_mode = false
 enabled_focus_mode = 2
-shortcut = SubResource( 2 )
+shortcut = null
 group = null
-text = "Laboratory"
+text = "1 : Mine"
 flat = false
 align = 1
 _sections_unfolded = [ "Size Flags" ]
 
-[node name="Rocket" type="Button" parent="BatimentsContainrer" index="1"]
+[node name="Warehouse" type="Button" parent="BatimentsContainrer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -104,12 +104,12 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Rocket"
+text = "2 : Warehouse"
 flat = false
 align = 1
 _sections_unfolded = [ "Size Flags" ]
 
-[node name="Wall" type="Button" parent="BatimentsContainrer" index="2"]
+[node name="Generator" type="Button" parent="BatimentsContainrer" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -120,21 +120,20 @@ margin_right = 688.0
 margin_bottom = 144.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 toggle_mode = false
-enabled_focus_mode = 2
+enabled_focus_mode = 0
 shortcut = null
 group = null
-text = "Wall"
+text = "3 : Generator"
 flat = false
 align = 1
 _sections_unfolded = [ "Size Flags" ]
 
-[node name="Warehouse" type="Button" parent="BatimentsContainrer" index="3"]
+[node name="Laboratory" type="Button" parent="BatimentsContainrer" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -152,14 +151,14 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 toggle_mode = false
 enabled_focus_mode = 2
-shortcut = null
+shortcut = SubResource( 2 )
 group = null
-text = "Warehouse"
+text = "4 : Laboratory"
 flat = false
 align = 1
 _sections_unfolded = [ "Size Flags" ]
 
-[node name="Mine" type="Button" parent="BatimentsContainrer" index="4"]
+[node name="Wall" type="Button" parent="BatimentsContainrer" index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -179,7 +178,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Mine"
+text = "5 : Wall"
 flat = false
 align = 1
 _sections_unfolded = [ "Size Flags" ]
@@ -204,12 +203,12 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Turret"
+text = "6 : Turret"
 flat = false
 align = 1
 _sections_unfolded = [ "Size Flags" ]
 
-[node name="Generator" type="Button" parent="BatimentsContainrer" index="6"]
+[node name="Rocket" type="Button" parent="BatimentsContainrer" index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -220,15 +219,16 @@ margin_right = 1672.0
 margin_bottom = 144.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 toggle_mode = false
-enabled_focus_mode = 0
+enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Generator"
+text = "7 : Rocket"
 flat = false
 align = 1
 _sections_unfolded = [ "Size Flags" ]
@@ -340,10 +340,12 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[connection signal="pressed" from="BatimentsContainrer/Laboratory" to="." method="_on_Laboratory_pressed"]
+[connection signal="pressed" from="BatimentsContainrer/Mine" to="." method="_on_Mine_pressed"]
 
 [connection signal="pressed" from="BatimentsContainrer/Warehouse" to="." method="_on_Warehouse_pressed"]
 
-[connection signal="pressed" from="BatimentsContainrer/Mine" to="." method="_on_Mine_pressed"]
+[connection signal="pressed" from="BatimentsContainrer/Generator" to="." method="_on_Generator_pressed"]
+
+[connection signal="pressed" from="BatimentsContainrer/Laboratory" to="." method="_on_Laboratory_pressed"]
 
 
