@@ -9,7 +9,7 @@ var production = 0
 var stock = 100
 
 func _ready():
-	
+	Global.init(self)
 	init_grid()
 
 #func _process(delta):

@@ -15,7 +15,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Main="*res://MAIN/Main.gd"
+Global="*res://GLOBAL/Global.gd"
 
 [display]
 

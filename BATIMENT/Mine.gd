@@ -11,4 +11,4 @@ func _ready():
 var boostScale = [10, 20, 40, 80, 160]
 
 func specific_build():
-	Main.addProduction(boostScale[boostLevel - 1])
+	Global.addProduction(boostScale[boostLevel - 1])

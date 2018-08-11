@@ -19,14 +19,14 @@ func _input(event):
 		pos.x = int(pos.x / 64)
 		pos.y = int(-pos.y / 64)
 		position = Vector2(pos.x * 64 + 32, -pos.y * 64 - 32)
-		if get_parent().isBuildable(self) :
+		if Global.isBuildable(self) :
 			$Sprite.modulate = Color(0, 1, 0, 0.5)
 		else :
 			$Sprite.modulate = Color(1, 0, 0, 0.5)
 	if event.is_action_pressed("ui_cancel"):
 		queue_free()
 		
-	if state == 0 and event.is_action_pressed("PlacerBatiment") and Main.isBuildable(self):
+	if state == 0 and event.is_action_pressed("PlacerBatiment") and Global.isBuildable(self):
 		build()
 	else :
 		pass
@@ -35,15 +35,15 @@ func build():
 	state = 1
 	boostLevel = compute_boost()
 	set_process_input(false)
-	Main.add_building_grid(self)
+	Global.add_building_grid(self)
 	print(boostLevel)
 	specific_build()
 
 func compute_boost():
 	var tempMax = 0
 	for x in range(pos.x, pos.x + size.x):
-		if pos.y > 0 and Main.Grid[x][pos.y - 1] != null and Main.Grid[x][pos.y - 1].type == type and Main.Grid[x][pos.y - 1].boostLevel > tempMax:
-			tempMax = Main.Grid[x][pos.y - 1].boostLevel
+		if pos.y > 0 and Global.main.Grid[x][pos.y - 1] != null and Global.main.Grid[x][pos.y - 1].type == type and Global.main.Grid[x][pos.y - 1].boostLevel > tempMax:
+			tempMax = Global.main.Grid[x][pos.y - 1].boostLevel
 	return boostLevel + tempMax
 
 func specific_build():
