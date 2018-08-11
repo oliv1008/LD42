@@ -7,7 +7,7 @@ var pos = Vector2(0, 0)
 var type = null
 var boostLevel = 1
 
-enum types {LABORATOIRE, MINE}
+enum types {LABORATOIRE, MINE, ENTREPOT}
 
 func _input(event):
 	if state == 0 and event is InputEventMouseMotion:
@@ -42,8 +42,8 @@ func build():
 func compute_boost():
 	var tempMax = 0
 	for x in range(pos.x, pos.x + size.x):
-		if pos.y > 0 and Global.main.Grid[x][pos.y - 1] != null and Global.main.Grid[x][pos.y - 1].type == type and Global.main.Grid[x][pos.y - 1].boostLevel > tempMax:
-			tempMax = Global.main.Grid[x][pos.y - 1].boostLevel
+		if pos.y > 0 and Global.Grid[x][pos.y - 1] != null and Global.Grid[x][pos.y - 1].type == type and Global.Grid[x][pos.y - 1].boostLevel > tempMax:
+			tempMax = Global.Grid[x][pos.y - 1].boostLevel
 	return boostLevel + tempMax
 
 func specific_build():

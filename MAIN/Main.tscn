@@ -60,4 +60,23 @@ color = Color( 0.582031, 0.398512, 0.00909424, 1 )
 
 [node name="Camera" parent="." index="4" instance=ExtResource( 4 )]
 
+[node name="Timer" type="Timer" parent="." index="5"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = true
+
+[node name="Line2D" type="Line2D" parent="." index="6"]
+
+points = PoolVector2Array( 0, -70, 6400, -70 )
+width = 5.0
+default_color = Color( 0.4, 0.5, 1, 0.414392 )
+texture_mode = 684549104
+sharp_limit = 2.0
+round_precision = 8
+_sections_unfolded = [ "Border", "Capping", "Fill", "Transform", "Z Index" ]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
 

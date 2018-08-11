@@ -14,7 +14,10 @@ func _ready():
 
 
 func _on_Laboratory_pressed():
-	get_parent().get_parent().initLab()
+	Global.initLab()
 
 func _on_Mine_pressed():
-	get_parent().get_parent().initMine()
+	Global.initMine()
+
+func _on_Warehouse_pressed():
+	Global.initEntrepot()
