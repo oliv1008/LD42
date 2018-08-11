@@ -10,7 +10,16 @@
 
 script = ExtResource( 1 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
+[node name="Line2D" type="Line2D" parent="." index="0"]
+
+points = PoolVector2Array( 32, -320, 7456, -320 )
+width = 10.0
+default_color = Color( 0.4, 0.5, 1, 1 )
+texture_mode = 40041280
+sharp_limit = 2.0
+round_precision = 8
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="1"]
 
 editor/display_folded = true
 layer = 1
@@ -21,24 +30,14 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="UI" parent="CanvasLayer" index="0" instance=ExtResource( 2 )]
 
-[node name="Camera" parent="." index="1" instance=ExtResource( 3 )]
+[node name="Camera" parent="." index="2" instance=ExtResource( 3 )]
 
-[node name="Timer" type="Timer" parent="." index="2"]
+[node name="Timer" type="Timer" parent="." index="3"]
 
 process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = true
-
-[node name="Line2D" type="Line2D" parent="." index="3"]
-
-points = PoolVector2Array( 160, -160, 6400, -160 )
-width = 5.0
-default_color = Color( 0.4, 0.5, 1, 0.414392 )
-texture_mode = 684549104
-sharp_limit = 2.0
-round_precision = 8
-_sections_unfolded = [ "Border", "Capping", "Fill", "Transform", "Z Index" ]
 
 [node name="Corruption" type="Node2D" parent="." index="4"]
 
