@@ -1,9 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://CAMERA/camera.gd" type="Script" id=1]
+[ext_resource path="res://CAMERA/Camera2D.gd" type="Script" id=2]
 
-
-[node name="test" type="Node2D"]
+[node name="Camera" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -13,10 +13,10 @@ anchor_mode = 1
 rotating = false
 current = true
 zoom = Vector2( 1, 1 )
-limit_left = -10000000
-limit_top = -10000000
-limit_right = 10000000
-limit_bottom = 10000000
+limit_left = -10000
+limit_top = -10000
+limit_right = 10000
+limit_bottom = 10000
 limit_smoothed = false
 drag_margin_h_enabled = false
 drag_margin_v_enabled = false
@@ -31,5 +31,14 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
+script = ExtResource( 2 )
+_sections_unfolded = [ "Limit", "Smoothing" ]
+key = false
+drag = true
+edge = false
+wheel = true
+zoom_out_limit = 100
+camera_speed = 450
+camera_margin = 50
 
 

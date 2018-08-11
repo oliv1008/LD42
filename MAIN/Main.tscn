@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://MAIN/Main.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://CAMERA/camera.tscn" type="PackedScene" id=3]
 
 [node name="Main" type="Node2D" index="0"]
 
@@ -45,21 +46,6 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 0.582031, 0.398512, 0.00909424, 1 )
 
-[node name="ColorRect" type="ColorRect" parent="." index="3"]
-
-anchor_left = 0.0
-anchor_top = 1.0
-anchor_right = 0.0
-anchor_bottom = 1.0
-margin_top = 416.0
-margin_right = 1030.0
-margin_bottom = 536.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-color = Color( 1, 1, 1, 1 )
+[node name="Camera" parent="." index="3" instance=ExtResource( 3 )]
 
 
