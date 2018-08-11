@@ -1,9 +1,8 @@
 extends Node2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
 var state = 0
+#size = Longueur * hauteur
+var size = Vector2(3, 1)
 var pos = Vector2(0, 0)
 
 func _ready():
@@ -27,7 +26,12 @@ func _input(event):
 		pos.y = int(-pos.y / 64)
 		print(pos)
 		position = Vector2(pos.x * 64 + 32 , -pos.y * 64 + 32)
-		if get_parent().isBuildable(self) :
-			print("OK")
-		else :
-			print("NOT OK")
+		
+	if state == 0 and event.is_action_pressed("PlacerBatiment") and Main.isBuildable(self):
+		build()
+	else :
+		print("NOT OK")
+			
+func build():
+	set_process_input(false)
+	Main.add_building_grid(self)

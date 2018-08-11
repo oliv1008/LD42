@@ -11,13 +11,10 @@ func _ready():
 #	pass
 
 func init_grid():
-	for y in range(0,10):
+	for x in range(0,10):
 		Grid.append([])
-		for x in range(0,5):
-			Grid[y].append(0)
-	Grid[0][0] = 1
-	Grid[3][0] = 2
-	Grid[3][1] = 3
+		for y in range(0,5):
+			Grid[x].append(0)
 	print(Grid)
 
 func _input(event):
@@ -27,10 +24,14 @@ func _input(event):
 		add_child(node)
 
 func isBuildable(var Batiment):
-	print("Batiment.pos = ", Batiment.pos)
-	if Batiment.pos.x >= 0 and Batiment.pos.x <= 9 and Batiment.pos.y >= 0 and Batiment.pos.y <= 4:
-		print("Grid = ", Grid[Batiment.pos.x][Batiment.pos.y])
 	if Batiment.pos.y >= 1:
 		return true
 	else :
 		return false
+		
+func add_building_grid(building):
+	for x in range(building.pos.x, building.pos.x + building.size.x):
+		for y in range(building.pos.y, building.pos.y + building.size.y):
+			Grid[x][y] = building
+	print(Grid)
+		
