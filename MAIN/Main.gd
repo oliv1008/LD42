@@ -4,6 +4,8 @@ extends Node2D
 # var a = 2
 # var b = "textvar"
 
+var tab
+
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
@@ -15,9 +17,14 @@ func _ready():
 #	pass
 
 func _input(event):
-	if event is InputEventMouseMotion:
-		var pos = event.position
-		pos.x = int(pos.x / 64)
-		pos.y = int((get_viewport_rect().size.y - pos.y) / 64)
-		print(pos)
-		$TEST.position = Vector2(pos.x * 64 + 32 , get_viewport_rect().size.y - pos.y * 64 - 32)
+	if event.is_action_pressed("Laboratoire"):
+		var scene = preload("res://BATIMENT//laboratoire.tscn")
+		var node = scene.instance()
+		add_child(node)	
+#	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.is_pressed() :
+
+func isBuildable(var Batiment):
+	if Batiment.pos.y >= 2:
+		return true
+	else :
+		return false
