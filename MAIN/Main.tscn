@@ -20,18 +20,11 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="UI" parent="CanvasLayer" index="0" instance=ExtResource( 2 )]
 
-[node name="Timer" type="Timer" parent="." index="1"]
-
-process_mode = 1
-wait_time = 1.0
-one_shot = false
-autostart = true
-
-[node name="TEST" type="Sprite" parent="." index="2"]
+[node name="TEST" type="Sprite" parent="." index="1"]
 
 texture = ExtResource( 3 )
 
-[node name="ColorRect2" type="ColorRect" parent="." index="3"]
+[node name="ColorRect2" type="ColorRect" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 1.0
@@ -48,7 +41,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 0.0852661, 0.496094, 0, 1 )
 
-[node name="ColorRect3" type="ColorRect" parent="." index="4"]
+[node name="ColorRect3" type="ColorRect" parent="." index="3"]
 
 anchor_left = 0.0
 anchor_top = 1.0
@@ -65,8 +58,6 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 0.582031, 0.398512, 0.00909424, 1 )
 
-[node name="Camera" parent="." index="5" instance=ExtResource( 4 )]
-
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[node name="Camera" parent="." index="4" instance=ExtResource( 4 )]
 
 

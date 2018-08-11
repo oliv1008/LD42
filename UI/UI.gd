@@ -14,5 +14,7 @@ func _ready():
 
 
 func _on_Laboratory_pressed():
-	var new_lab = Laboratoire.instance()
-	Main.add_child(new_lab)
+	get_parent().get_parent().initLab()
+
+func _on_Mine_pressed():
+	get_parent().get_parent().initMine()

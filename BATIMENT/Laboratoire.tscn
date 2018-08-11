@@ -14,13 +14,13 @@ _sections_unfolded = [ "Animation", "Material", "Transform", "Visibility" ]
 
 [node name="Sprite2" type="Sprite" parent="." index="1"]
 
-position = Vector2( 60, 0 )
+position = Vector2( 64, 0 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite3" type="Sprite" parent="." index="2"]
 
-position = Vector2( 120, 0 )
+position = Vector2( 128, 0 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 

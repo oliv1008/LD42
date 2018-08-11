@@ -342,4 +342,6 @@ max_lines_visible = -1
 
 [connection signal="pressed" from="BatimentsContainrer/Laboratory" to="." method="_on_Laboratory_pressed"]
 
+[connection signal="pressed" from="BatimentsContainrer/Mine" to="." method="_on_Mine_pressed"]
+
 
