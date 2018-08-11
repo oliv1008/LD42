@@ -27,10 +27,16 @@ func _input(event):
 		add_child(node)
 
 func isBuildable(var Batiment):
-	print("Batiment.pos = ", Batiment.pos)
-	if Batiment.pos.x >= 0 and Batiment.pos.x <= 9 and Batiment.pos.y >= 0 and Batiment.pos.y <= 4:
-		print("Grid = ", Grid[Batiment.pos.x][Batiment.pos.y])
+#	print("Batiment.pos = ", Batiment.pos)
+#	if Batiment.pos.x >= 0 and Batiment.pos.x <= 9 and Batiment.pos.y >= 0 and Batiment.pos.y <= 4:
+#		print("Grid = ", Grid[Batiment.pos.x][Batiment.pos.y])
 	if Batiment.pos.y >= 1:
 		return true
 	else :
 		return false
+
+var ressources = 0
+var production = 1
+func _on_Timer_timeout():
+	ressources += production
+	print(ressources)

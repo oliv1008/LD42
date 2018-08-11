@@ -104,11 +104,10 @@ func _physics_process(delta):
 	_prev_mouse_pos = get_local_mouse_position()
 
 func _input(event):
-	if event is InputEventMouseButton :
-		if event.is_action_pressed("CameraSlide") and drag:
-			__rmbk = true
-		elif event.is_action_released("CameraSlide"):
-			__rmbk = false
+	if event.is_action_pressed("CameraSlide") and drag:
+		__rmbk = true
+	elif event.is_action_released("CameraSlide"):
+		__rmbk = false
 		
 		# Check if mouse wheel was used. Not handled by ImputMap!
 	if wheel:

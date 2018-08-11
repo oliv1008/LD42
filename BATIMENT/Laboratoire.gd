@@ -7,6 +7,7 @@ var state = 0
 var pos = Vector2(0, 0)
 
 func _ready():
+	
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	pass
@@ -16,7 +17,7 @@ func _ready():
 #	# Update game logic here.
 #	pass
 
-func _input(event):
+func _unhandled_input(event):
 	if state == 0 and event is InputEventMouseMotion:
 		pos = get_global_mouse_position()
 		if pos.x < 0:
@@ -27,7 +28,10 @@ func _input(event):
 		pos.y = int(-pos.y / 64)
 		print(pos)
 		position = Vector2(pos.x * 64 + 32 , -pos.y * 64 + 32)
-		if get_parent().isBuildable(self) :
-			print("OK")
+		if get_parent().isBuildable(self) :			
+			$Sprite.modulate = Color(0, 1, 0, 0.5)
 		else :
-			print("NOT OK")
+			pass
+			$Sprite.modulate = Color(1, 0, 0, 0.5)
+	if event.is_action_pressed("ui_cancel"):
+		queue_free()
