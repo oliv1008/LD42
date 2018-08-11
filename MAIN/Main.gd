@@ -1,26 +1,30 @@
 extends Node2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
-
-var tab
+var Grid = []
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	pass
+	init_grid()
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 #	pass
 
+func init_grid():
+	for y in range(0,10):
+		Grid.append([])
+		for x in range(0,5):
+			Grid[y].append(0)
+	Grid[0][0] = 1
+	Grid[3][0] = 2
+	Grid[3][1] = 3
+	print(Grid)
+
 func _input(event):
 	if event.is_action_pressed("Laboratoire"):
-		var scene = preload("res://BATIMENT//laboratoire.tscn")
+		var scene = preload("res://BATIMENT/Laboratoire.tscn")
 		var node = scene.instance()
-		add_child(node)	
+		add_child(node)
 #	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.is_pressed() :
 
 func isBuildable(var Batiment):
