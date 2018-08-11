@@ -2,10 +2,10 @@
 
 [ext_resource path="res://MAIN/Main.gd" type="Script" id=1]
 [ext_resource path="res://UI/UI.tscn" type="PackedScene" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Pixel Art/Sol1.png" type="Texture" id=3]
 [ext_resource path="res://CAMERA/camera.tscn" type="PackedScene" id=4]
 
-[node name="Main" type="Node2D" index="0"]
+[node name="Main" type="Node2D"]
 
 script = ExtResource( 1 )
 
