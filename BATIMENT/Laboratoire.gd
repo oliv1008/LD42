@@ -1,9 +1,8 @@
 extends Node2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
 var state = 0
+#size = Longueur * hauteur
+var size = Vector2(3, 1)
 var pos = Vector2(0, 0)
 
 func _ready():
@@ -35,3 +34,12 @@ func _unhandled_input(event):
 			$Sprite.modulate = Color(1, 0, 0, 0.5)
 	if event.is_action_pressed("ui_cancel"):
 		queue_free()
+		
+	if state == 0 and event.is_action_pressed("PlacerBatiment") and Main.isBuildable(self):
+		build()
+	else :
+		print("NOT OK")
+			
+func build():
+	set_process_input(false)
+	Main.add_building_grid(self)
