@@ -7,7 +7,7 @@ func _ready():
 	type = Global.LABORATOIRE
 	health = 40
 	maxHealth = 40
-	pass
+		
 var boostScale = [1, 1.2, 1.5, 2, 3]
 func specific_build():
 	researchSpeed = boostScale[boostLevel - 1]

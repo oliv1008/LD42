@@ -1,5 +1,5 @@
-extends Node2D
+extends Control
 const RECT_SIZE = 48
 
 func update(health, maxHealth):
-	$Health.rect_size = Vector2( 48 * health / maxHealth, 8)
+	$Health.rect_size = Vector2( RECT_SIZE * health / maxHealth, 8)
