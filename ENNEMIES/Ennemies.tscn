@@ -9,9 +9,33 @@
 [sub_resource type="Animation" id=2]
 
 resource_name = "Attack"
-length = 1.0
+length = 0.8
 loop = false
-step = 0.1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.25, 0.45, 0.5, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 3, 9, 10, 8, 9, 7 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.25, 0.3, 0.3, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -8, 0 ), Vector2( -8, 0 ), Vector2( 0, -48 ), Vector2( 8, -24 ), Vector2( 24, -64 ), Vector2( 8, 0 ), Vector2( 8, 0 ), Vector2( 1.90735e-006, 1.90735e-006 ) ]
+}
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -20,6 +44,7 @@ extents = Vector2( 40, 24 )
 
 [node name="Ennemies" type="Node2D"]
 
+position = Vector2( 8, 8 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Pause" ]
 
@@ -30,8 +55,8 @@ scale = Vector2( 2.5, 2.5 )
 texture = ExtResource( 2 )
 vframes = 2
 hframes = 8
-frame = 1
-_sections_unfolded = [ "Animation" ]
+frame = 7
+_sections_unfolded = [ "Animation", "Offset", "Transform" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
 
@@ -49,8 +74,8 @@ blend_times = [  ]
 [node name="KinematicBody2D" type="KinematicBody2D" parent="." index="2"]
 
 input_pickable = false
-collision_layer = 25
-collision_mask = 25
+collision_layer = 1024
+collision_mask = 8
 collision/safe_margin = 0.08
 _sections_unfolded = [ "Collision", "collision" ]
 __meta__ = {
@@ -61,6 +86,9 @@ __meta__ = {
 
 position = Vector2( 0, 16 )
 shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Cooldown" type="Timer" parent="." index="3"]
 

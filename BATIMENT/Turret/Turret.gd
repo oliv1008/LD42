@@ -26,25 +26,25 @@ func _on_Area2D_body_entered(body):
 func _on_Timer_timeout():
 	if state == 1:
 		attack()
-	receiveAttack(10)
+		receiveAttack(10)
 
 func attack():
 	if ennemies.size() != 0:
 		if ennemies[0].get_node("KinematicBody2D") != null:
 			ennemies[0].get_node("KinematicBody2D").queue_free()
 			drawLaser(ennemies[0])
-			kill(ennemies[0])
 		ennemies.remove(0)
 
 func drawLaser(body):
 	$Laser.set_point_position(1, body.global_position - $Laser.global_position)
+	$Laser.visible = true
+	body.get_node("AnimationPlayer").play("Disparition Sprite Ennemies")
 	$AnimationPlayer.play("Laser reset")
 	
 func resetLaser():
+	$Laser.visible = false
 	$Laser.set_point_position(1, Vector2(-20, -19.6))
 
-func kill(body):
-	body.get_node("AnimationPlayer").play("Disparition Sprite Ennemies")
 	
 func _on_Area2D_body_exited(body):
 	var index = ennemies.find(body.get_parent())

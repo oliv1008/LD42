@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://BATIMENT/Turret/Turret.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Pixel Art/Batiments/Turret/Turret.png" type="Texture" id=2]
@@ -23,7 +23,7 @@ tracks/0/keys = {
 "values": [ PoolVector2Array( -32, -16, -32, -16 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 
 resource_name = "Laser reset"
 length = 0.05
@@ -44,10 +44,15 @@ tracks/0/keys = {
 } ]
 }
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=3]
 
 custom_solver_bias = 0.0
 radius = 496.0
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 32 )
 
 [node name="Turret" type="Node2D"]
 
@@ -56,6 +61,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Laser" type="Line2D" parent="." index="0"]
 
+visible = false
 points = PoolVector2Array( -20, -19.6, -17, -19.6 )
 width = 4.0
 default_color = Color( 1, 0, 0, 1 )
@@ -66,7 +72,6 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
-modulate = Color( 1, 1, 1, 0 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Animation", "Material", "Transform", "Visibility" ]
 
@@ -79,7 +84,7 @@ playback_default_blend_time = 0.0
 playback_speed = 1.0
 "anims/Disparition Sprite" = ExtResource( 3 )
 anims/Laser = SubResource( 1 )
-"anims/Laser reset" = SubResource( 3 )
+"anims/Laser reset" = SubResource( 2 )
 blend_times = [  ]
 
 [node name="Area2D" type="Area2D" parent="." index="3"]
@@ -89,13 +94,15 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
+collision_layer = 0
+collision_mask = 1024
 audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -115,6 +122,18 @@ process_mode = 1
 wait_time = 3.0
 one_shot = false
 autostart = true
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="." index="6"]
+
+input_pickable = false
+collision_layer = 0
+collision_mask = 0
+collision/safe_margin = 0.08
+_sections_unfolded = [ "Collision", "collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D" index="0"]
+
+shape = SubResource( 4 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 

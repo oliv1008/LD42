@@ -31,9 +31,12 @@ wait_time = 1.0
 one_shot = false
 autostart = true
 
-[node name="Line2D" type="Line2D" parent="." index="3"]
+[node name="TileMap" parent="." index="3" instance=ExtResource( 4 )]
 
-editor/display_folded = true
+position = Vector2( 0, -13 )
+
+[node name="Line2D" type="Line2D" parent="." index="4"]
+
 points = PoolVector2Array( 0, -70, 6400, -70 )
 width = 5.0
 default_color = Color( 0.4, 0.5, 1, 0.414392 )
@@ -42,11 +45,7 @@ sharp_limit = 2.0
 round_precision = 8
 _sections_unfolded = [ "Border", "Capping", "Fill", "Transform", "Z Index" ]
 
-[node name="TileMap" parent="Line2D" index="0" instance=ExtResource( 4 )]
-
-position = Vector2( -136, -16 )
-
-[node name="Corruption" type="Node2D" parent="." index="4"]
+[node name="Corruption" type="Node2D" parent="." index="5"]
 
 script = ExtResource( 5 )
 
@@ -56,9 +55,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -5170.0
-margin_top = -9510.0
-margin_bottom = 4540.0
+margin_left = -5168.0
+margin_top = -9504.0
+margin_right = 2.0
+margin_bottom = 4546.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -75,9 +75,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 6400.0
-margin_top = -8870.0
+margin_top = -8832.0
 margin_right = 18120.0
-margin_bottom = 5280.0
+margin_bottom = 5318.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -87,22 +87,31 @@ size_flags_vertical = 1
 color = Color( 0.591064, 0.21875, 1, 0.5 )
 _sections_unfolded = [ "Rect" ]
 
-[node name="Timer" type="Timer" parent="Corruption" index="2"]
+[node name="MobWave" type="Timer" parent="Corruption" index="2"]
+
+process_mode = 1
+wait_time = 10.0
+one_shot = false
+autostart = true
+
+[node name="CorruptionProgress" type="Timer" parent="Corruption" index="3"]
 
 process_mode = 1
 wait_time = 3.0
 one_shot = false
 autostart = true
 
-[node name="Ennemies" type="Node2D" parent="." index="5"]
+[node name="Ennemies" type="Node2D" parent="." index="6"]
 
 [node name="Ennemies" parent="Ennemies" index="0" instance=ExtResource( 6 )]
 
-position = Vector2( 176, -40 )
+position = Vector2( 6456, -40 )
 _sections_unfolded = [ "Collision", "Pause", "Transform" ]
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
-[connection signal="timeout" from="Corruption/Timer" to="Corruption" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Corruption/MobWave" to="Corruption" method="_on_MobWave_timeout"]
+
+[connection signal="timeout" from="Corruption/CorruptionProgress" to="Corruption" method="_on_Timer_timeout"]
 
 
