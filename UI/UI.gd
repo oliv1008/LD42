@@ -63,3 +63,7 @@ func on_research_over():
 	$IconResearch.visible = false
 	$ResearchAndLoadingContainer/LifeBar.visible = false
 	$ResearchAndLoadingContainer/ResearchButton.visible = true
+
+func _on_TextureButton_pressed():
+	print("COUCOU")
+	get_tree().quit()

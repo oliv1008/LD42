@@ -12,12 +12,13 @@ var energy = 100
 var energyconsummed = 0
 var researchSpeed = 0
 
-var hauteurMaxDeConstruction = 5
+var hauteurMaxDeConstruction = 1
 var maxTourDePise = 1 
 
 const GRID_LENGHT = 100
 const GRID_HEIGH = 100
 const CELL_SIZE = 64
+const CORRRUPTION_SPEED = 5
 
 const COST_LAB = 75
 const COST_MINE = 50

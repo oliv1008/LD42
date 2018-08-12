@@ -16,7 +16,8 @@ func _physics_process(delta):
 		attack(result.collider.get_parent())
 	if $KinematicBody2D != null:
 		$KinematicBody2D.move_and_collide(speed * delta * Vector2(direction, 0))
-		position = $KinematicBody2D.global_position
+		position.x = $KinematicBody2D.global_position.x
+		position.y = -40
 		$KinematicBody2D.position = Vector2(0, 0)
 	elif $AnimationPlayer.current_animation == "Walk":
 		queue_free()

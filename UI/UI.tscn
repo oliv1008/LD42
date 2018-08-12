@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://UI/UI.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Pixel Art/Icones/icone augmente limite tech.png" type="Texture" id=2]
@@ -31,6 +31,7 @@
 [ext_resource path="res://Assets/Pixel Art/Icones/Icone energie alpha.png" type="Texture" id=29]
 [ext_resource path="res://Assets/Pixel Art/Icones/icone prod labo.png" type="Texture" id=30]
 [ext_resource path="res://Assets/Pixel Art/Icones/icone prod mineraux.png" type="Texture" id=31]
+[ext_resource path="res://UI/Time.gd" type="Script" id=32]
 
 [sub_resource type="InputEventMouseButton" id=1]
 
@@ -60,7 +61,7 @@ use_filter = false
 font_data = ExtResource( 27 )
 _sections_unfolded = [ "Font" ]
 
-[node name="UI" type="Control" index="0"]
+[node name="UI" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -99,6 +100,7 @@ _sections_unfolded = [ "Size Flags" ]
 
 [node name="ResearchAndLoadingContainer" type="CenterContainer" parent="." index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -292,7 +294,6 @@ _sections_unfolded = [ "Textures" ]
 
 [node name="BatimentsContainrer" type="HBoxContainer" parent="." index="3"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -943,9 +944,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 877.0
+margin_left = 750.0
 margin_top = 23.0
-margin_right = 1043.0
+margin_right = 1170.0
 margin_bottom = 67.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -961,7 +962,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 166.0
+margin_right = 420.0
 margin_bottom = 20.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -970,7 +971,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 3 )
-text = "Remaining time"
+text = "Remaining time until world corruption"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -984,7 +985,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 24.0
-margin_right = 166.0
+margin_right = 420.0
 margin_bottom = 44.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -998,7 +999,15 @@ align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+script = ExtResource( 32 )
 _sections_unfolded = [ "custom_fonts" ]
+
+[node name="Timer" type="Timer" parent="TimerContainer/VBoxContainer/Time" index="0"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
 
 [node name="GlobalTimer" type="Timer" parent="." index="5"]
 
@@ -1029,6 +1038,8 @@ autostart = false
 [connection signal="pressed" from="BatimentsContainrer/Warehouse" to="." method="_on_Warehouse_pressed"]
 
 [connection signal="pressed" from="BatimentsContainrer/Laboratory" to="." method="_on_Laboratory_pressed"]
+
+[connection signal="timeout" from="TimerContainer/VBoxContainer/Time/Timer" to="TimerContainer/VBoxContainer/Time" method="_on_Timer_timeout"]
 
 [connection signal="timeout" from="GlobalTimer" to="." method="on_research_over"]
 

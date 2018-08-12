@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://BATIMENT/Turret/Turret.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Pixel Art/Batiments/Turret/Turret.png" type="Texture" id=2]
 [ext_resource path="res://BATIMENT/Disparition Sprite.anim" type="Animation" id=3]
+[ext_resource path="res://Assets/SoundEffect/AudioStreamPlayer.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/SoundEffect/laser.wav" type="AudioStream" id=5]
 
 [sub_resource type="Animation" id=1]
 
@@ -53,6 +55,11 @@ radius = 496.0
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
+
+[sub_resource type="AudioStreamRandomPitch" id=5]
+
+audio_stream = ExtResource( 5 )
+random_pitch = 1.1
 
 [node name="Turret" type="Node2D"]
 
@@ -134,6 +141,17 @@ _sections_unfolded = [ "Collision", "collision" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D" index="0"]
 
 shape = SubResource( 4 )
+
+[node name="AudioStreamPlayer" parent="." index="7" instance=ExtResource( 4 )]
+
+[node name="AudioLaser" type="AudioStreamPlayer" parent="." index="8"]
+
+stream = SubResource( 5 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Test"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 

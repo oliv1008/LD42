@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://BATIMENT/Mine/Mine.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Pixel Art/Batiments/Mine/Mine.png" type="Texture" id=2]
 [ext_resource path="res://BATIMENT/Disparition Sprite.anim" type="Animation" id=3]
+[ext_resource path="res://Assets/SoundEffect/AudioStreamPlayer.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -41,5 +42,7 @@ _sections_unfolded = [ "Collision" ]
 
 position = Vector2( 64, -32 )
 shape = SubResource( 1 )
+
+[node name="AudioStreamPlayer" parent="." index="3" instance=ExtResource( 4 )]
 
 

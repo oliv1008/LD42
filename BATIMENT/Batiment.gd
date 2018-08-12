@@ -14,6 +14,7 @@ var researchSpeed = 0
 var health
 var maxHealth
 var isOff = false
+var pitch_scales = [1.0, 1.2, 1.4, 1.6, 2.0, 3.0]
 
 var Prices = {Global.LABORATOIRE:Global.COST_LAB, Global.MINE:Global.COST_MINE, Global.ENTREPOT:Global.COST_ENTREPOT,\
 		 Global.GENERATEUR:Global.COST_GENERATEUR, Global.MUR:Global.COST_MUR, Global.TURRET:Global.COST_TURRET, Global.ROCKET:Global.COST_ROCKET}
@@ -52,6 +53,9 @@ func build():
 	Global.energyconsummed += Energies[type]
 	$KinematicBody2D.set_collision_layer_bit(3, true)
 	$KinematicBody2D.set_collision_mask_bit(3, true)
+	
+	$AudioStreamPlayer.pitch_scale = pitch_scales[boostLevel - 1]
+	$AudioStreamPlayer.play()
 	specific_build()
 
 func compute_boost():
@@ -114,6 +118,7 @@ func smartRemove(outOfEnergy = false):
 			Global.Grid[x][y] = null
 	handleSuperiorBuildings()
 	$AnimationPlayer.play("Disparition Sprite")
+	$KinematicBody2D.queue_free()
 
 func endOfAnimation():
 	queue_free()

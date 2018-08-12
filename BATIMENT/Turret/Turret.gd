@@ -26,7 +26,6 @@ func _on_Area2D_body_entered(body):
 func _on_Timer_timeout():
 	if state == 1:
 		attack()
-		receiveAttack(10)
 
 func attack():
 	if ennemies.size() != 0:
@@ -38,6 +37,7 @@ func attack():
 func drawLaser(body):
 	$Laser.set_point_position(1, body.global_position - $Laser.global_position)
 	$Laser.visible = true
+	$AudioLaser.play()
 	body.get_node("AnimationPlayer").play("Disparition Sprite Ennemies")
 	$AnimationPlayer.play("Laser reset")
 	

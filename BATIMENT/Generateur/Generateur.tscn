@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://BATIMENT/Generateur/Generateur.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Pixel Art/Batiments/Generator/Generator.png" type="Texture" id=2]
+[ext_resource path="res://Assets/SoundEffect/AudioStreamPlayer.tscn" type="PackedScene" id=3]
 
 [sub_resource type="Animation" id=1]
 
@@ -61,7 +62,9 @@ position = Vector2( 96, 0 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="." index="2"]
+[node name="AudioStreamPlayer" parent="." index="2" instance=ExtResource( 3 )]
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="." index="3"]
 
 input_pickable = false
 collision_layer = 0
