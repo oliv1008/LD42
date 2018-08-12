@@ -56,7 +56,7 @@ use_filter = false
 font_data = ExtResource( 25 )
 _sections_unfolded = [ "Font" ]
 
-[node name="UI" type="Control" index="0"]
+[node name="UI" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -402,7 +402,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 11.0
-margin_top = 34.0
+margin_top = 12.0
 margin_right = 227.0
 margin_bottom = 219.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -412,9 +412,9 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/separation = 15
+custom_constants/separation = 0
 alignment = 0
-_sections_unfolded = [ "Rect", "Size Flags", "custom_constants" ]
+_sections_unfolded = [ "Margin", "Rect", "Size Flags", "custom_constants" ]
 
 [node name="Minerals" type="Label" parent="BatimentsContainrer/TextureRect/RessourcesContainer" index="0"]
 
@@ -438,15 +438,15 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Size Flags", "custom_fonts" ]
 
-[node name="CenterContainer" type="CenterContainer" parent="BatimentsContainrer/TextureRect/RessourcesContainer" index="1"]
+[node name="MineralsContainer" type="CenterContainer" parent="BatimentsContainrer/TextureRect/RessourcesContainer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 35.0
+margin_top = 20.0
 margin_right = 216.0
-margin_bottom = 67.0
+margin_bottom = 52.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -456,7 +456,7 @@ size_flags_vertical = 1
 use_top_left = false
 _sections_unfolded = [ "Size Flags" ]
 
-[node name="MineraiContainer" type="HBoxContainer" parent="BatimentsContainrer/TextureRect/RessourcesContainer/CenterContainer" index="0"]
+[node name="Container" type="HBoxContainer" parent="BatimentsContainrer/TextureRect/RessourcesContainer/MineralsContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -474,7 +474,7 @@ size_flags_vertical = 0
 alignment = 0
 _sections_unfolded = [ "Size Flags" ]
 
-[node name="XXXX" type="Label" parent="BatimentsContainrer/TextureRect/RessourcesContainer/CenterContainer/MineraiContainer" index="0"]
+[node name="Text" type="Label" parent="BatimentsContainrer/TextureRect/RessourcesContainer/MineralsContainer/Container" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -497,7 +497,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Size Flags", "custom_fonts" ]
 
-[node name="MineraiText" type="TextureRect" parent="BatimentsContainrer/TextureRect/RessourcesContainer/CenterContainer/MineraiContainer" index="1"]
+[node name="MineraiText" type="TextureRect" parent="BatimentsContainrer/TextureRect/RessourcesContainer/MineralsContainer/Container" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -522,9 +522,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 82.0
+margin_top = 52.0
 margin_right = 216.0
-margin_bottom = 102.0
+margin_bottom = 72.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -540,15 +540,15 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Size Flags", "custom_fonts" ]
 
-[node name="CenterContainer2" type="CenterContainer" parent="BatimentsContainrer/TextureRect/RessourcesContainer" index="3"]
+[node name="EnergieContainer2" type="CenterContainer" parent="BatimentsContainrer/TextureRect/RessourcesContainer" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 117.0
+margin_top = 72.0
 margin_right = 216.0
-margin_bottom = 149.0
+margin_bottom = 104.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -558,7 +558,7 @@ size_flags_vertical = 1
 use_top_left = false
 _sections_unfolded = [ "Size Flags" ]
 
-[node name="EnergyContainer" type="HBoxContainer" parent="BatimentsContainrer/TextureRect/RessourcesContainer/CenterContainer2" index="0"]
+[node name="Container" type="HBoxContainer" parent="BatimentsContainrer/TextureRect/RessourcesContainer/EnergieContainer2" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -575,7 +575,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="XXXX" type="Label" parent="BatimentsContainrer/TextureRect/RessourcesContainer/CenterContainer2/EnergyContainer" index="0"]
+[node name="Text" type="Label" parent="BatimentsContainrer/TextureRect/RessourcesContainer/EnergieContainer2/Container" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -598,7 +598,207 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="EnergyText" type="TextureRect" parent="BatimentsContainrer/TextureRect/RessourcesContainer/CenterContainer2/EnergyContainer" index="1"]
+[node name="EnergyText" type="TextureRect" parent="BatimentsContainrer/TextureRect/RessourcesContainer/EnergieContainer2/Container" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 154.0
+margin_right = 186.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 27 )
+stretch_mode = 0
+
+[node name="Research Speed" type="Label" parent="BatimentsContainrer/TextureRect/RessourcesContainer" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 104.0
+margin_right = 216.0
+margin_bottom = 124.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 3 )
+text = "Research Speed"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Size Flags", "custom_fonts" ]
+
+[node name="ResearchContainer3" type="CenterContainer" parent="BatimentsContainrer/TextureRect/RessourcesContainer" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 124.0
+margin_right = 216.0
+margin_bottom = 156.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+use_top_left = false
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="Container" type="HBoxContainer" parent="BatimentsContainrer/TextureRect/RessourcesContainer/ResearchContainer3" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 15.0
+margin_right = 201.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="Text" type="Label" parent="BatimentsContainrer/TextureRect/RessourcesContainer/ResearchContainer3/Container" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 150.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 3 )
+text = "XXXX / XXXX"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="EnergyText" type="TextureRect" parent="BatimentsContainrer/TextureRect/RessourcesContainer/ResearchContainer3/Container" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 154.0
+margin_right = 186.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 27 )
+stretch_mode = 0
+
+[node name="Production Speed" type="Label" parent="BatimentsContainrer/TextureRect/RessourcesContainer" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 156.0
+margin_right = 216.0
+margin_bottom = 176.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 3 )
+text = "Production Speed"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Size Flags", "custom_fonts" ]
+
+[node name="ProductionContainer4" type="CenterContainer" parent="BatimentsContainrer/TextureRect/RessourcesContainer" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 176.0
+margin_right = 216.0
+margin_bottom = 208.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+use_top_left = false
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="Container" type="HBoxContainer" parent="BatimentsContainrer/TextureRect/RessourcesContainer/ProductionContainer4" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 15.0
+margin_right = 201.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="Text" type="Label" parent="BatimentsContainrer/TextureRect/RessourcesContainer/ProductionContainer4/Container" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 150.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 3 )
+text = "XXXX / XXXX"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="EnergyText" type="TextureRect" parent="BatimentsContainrer/TextureRect/RessourcesContainer/ProductionContainer4/Container" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
