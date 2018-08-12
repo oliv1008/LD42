@@ -11,7 +11,7 @@ ground_bottom_color = Color( 0.101961, 0.145098, 0.188235, 1 )
 ground_horizon_color = Color( 0.482353, 0.788235, 0.952941, 1 )
 ground_curve = 0.01
 ground_energy = 1.0
-sun_color = Color( 0.839844, 0.828772, 0.131226, 1 )
+sun_color = Color( 1, 1, 1, 1 )
 sun_latitude = 35.0
 sun_longitude = 0.0
 sun_angle_min = 1.0
@@ -19,7 +19,6 @@ sun_angle_max = 100.0
 sun_curve = 0.05
 sun_energy = 16.0
 texture_size = 2
-_sections_unfolded = [ "Sky", "Sun" ]
 
 [resource]
 

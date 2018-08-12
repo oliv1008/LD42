@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://BATIMENT/Entrepot/Entrepot.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Pixel Art/Warehouse.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Pixel Art/Batiments/Warehouse/Warehouse.png" type="Texture" id=2]
 [ext_resource path="res://BATIMENT/Disparition Sprite.anim" type="Animation" id=3]
 
 [node name="Entrepot" type="Node2D"]
