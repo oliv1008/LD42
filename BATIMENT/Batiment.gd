@@ -49,6 +49,8 @@ func build():
 	Global.add_building_grid(self)
 	Global.ressources -= Prices[type]
 	Global.energyconsummed += Energies[type]
+	$KinematicBody2D.set_collision_layer_bit(4, true)
+	$KinematicBody2D.set_collision_mask_bit(4, true)
 	specific_build()
 
 func compute_boost():

@@ -33,6 +33,7 @@ autostart = true
 
 [node name="Line2D" type="Line2D" parent="." index="3"]
 
+editor/display_folded = true
 points = PoolVector2Array( 0, -70, 6400, -70 )
 width = 5.0
 default_color = Color( 0.4, 0.5, 1, 0.414392 )
@@ -97,57 +98,7 @@ autostart = true
 
 [node name="Ennemies" parent="Ennemies" index="0" instance=ExtResource( 6 )]
 
-position = Vector2( 496, -8 )
-_sections_unfolded = [ "Collision", "Pause", "Transform" ]
-
-[node name="Ennemies2" parent="Ennemies" index="1" instance=ExtResource( 6 )]
-
-position = Vector2( 1256, -8 )
-_sections_unfolded = [ "Collision", "Pause", "Transform" ]
-
-[node name="Ennemies3" parent="Ennemies" index="2" instance=ExtResource( 6 )]
-
-position = Vector2( 504, -72 )
-_sections_unfolded = [ "Collision", "Pause", "Transform" ]
-
-[node name="Ennemies4" parent="Ennemies" index="3" instance=ExtResource( 6 )]
-
-position = Vector2( 1232, -48 )
-_sections_unfolded = [ "Collision", "Pause", "Transform" ]
-
-[node name="Ennemies5" parent="Ennemies" index="4" instance=ExtResource( 6 )]
-
-position = Vector2( 1184, -112 )
-_sections_unfolded = [ "Collision", "Pause", "Transform" ]
-
-[node name="Ennemies6" parent="Ennemies" index="5" instance=ExtResource( 6 )]
-
-position = Vector2( 1120, -168 )
-_sections_unfolded = [ "Collision", "Pause", "Transform" ]
-
-[node name="Ennemies7" parent="Ennemies" index="6" instance=ExtResource( 6 )]
-
-position = Vector2( 560, -128 )
-_sections_unfolded = [ "Collision", "Pause", "Transform" ]
-
-[node name="Ennemies8" parent="Ennemies" index="7" instance=ExtResource( 6 )]
-
-position = Vector2( 600, -160 )
-_sections_unfolded = [ "Collision", "Pause", "Transform" ]
-
-[node name="Ennemies9" parent="Ennemies" index="8" instance=ExtResource( 6 )]
-
-position = Vector2( 640, -192 )
-_sections_unfolded = [ "Collision", "Pause", "Transform" ]
-
-[node name="Ennemies10" parent="Ennemies" index="9" instance=ExtResource( 6 )]
-
-position = Vector2( 632, -56 )
-_sections_unfolded = [ "Collision", "Pause", "Transform" ]
-
-[node name="Ennemies11" parent="Ennemies" index="10" instance=ExtResource( 6 )]
-
-position = Vector2( 1080, -40 )
+position = Vector2( 960, -8 )
 _sections_unfolded = [ "Collision", "Pause", "Transform" ]
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
