@@ -1,32 +1,36 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://UI/UI.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Pixel Art/Boutons/ResearchButton/Normal.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Pixel Art/Boutons/ResearchButton/Hover.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Ski is the limit/Normal.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Ski is the limit/Hover.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Leaning tower of Pisa/Normal.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Leaning tower of Pisa/Hover.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Pixel Art/Boutons/To infinity and beyond/Normal.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Pixel Art/Boutons/To infinity and beyond/Hover.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Mine/Normal.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Mine/Hover.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Warehouse/Normal.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Warehouse/Hover.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Pixel Art/Icones/icone augmente limite tech.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Pixel Art/Boutons/ResearchButton/Normal.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Pixel Art/Boutons/ResearchButton/Hover.png" type="Texture" id=4]
+[ext_resource path="res://LIFEBAR/LifeBar.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Ski is the limit/Normal.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Ski is the limit/Hover.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Leaning tower of Pisa/Normal.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Leaning tower of Pisa/Hover.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Pixel Art/Boutons/To infinity and beyond/Normal.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Pixel Art/Boutons/To infinity and beyond/Hover.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Mine/Normal.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Mine/Hover.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Pixel Art/Boutons/Generator/Normal.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Pixel Art/Boutons/Generator/Hover.png" type="Texture" id=15]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Labo/Normal.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Labo/Hover.png" type="Texture" id=17]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Mur/Normal.png" type="Texture" id=18]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Mur/Hover.png" type="Texture" id=19]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Turret/Normal.png" type="Texture" id=20]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Turret/Hover.png" type="Texture" id=21]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Rocket/Normal.png" type="Texture" id=22]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Rocket/Hover.png" type="Texture" id=23]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Icone vide.png" type="Texture" id=24]
-[ext_resource path="res://Cave-Story.ttf" type="DynamicFontData" id=25]
-[ext_resource path="res://Assets/Pixel Art/Icones/Icone minerai alpha.png" type="Texture" id=26]
-[ext_resource path="res://Assets/Pixel Art/Icones/Icone energie alpha.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Warehouse/Normal.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Warehouse/Hover.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Labo/Normal.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Labo/Hover.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Mur/Normal.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Mur/Hover.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Turret/Normal.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Turret/Hover.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Rocket/Normal.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Rocket/Hover.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Icone vide.png" type="Texture" id=26]
+[ext_resource path="res://Cave-Story.ttf" type="DynamicFontData" id=27]
+[ext_resource path="res://Assets/Pixel Art/Icones/Icone minerai alpha.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Pixel Art/Icones/Icone energie alpha.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Pixel Art/Icones/icone prod labo.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Pixel Art/Icones/icone prod mineraux.png" type="Texture" id=31]
 
 [sub_resource type="InputEventMouseButton" id=1]
 
@@ -53,10 +57,10 @@ shortcut = SubResource( 1 )
 size = 32
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 25 )
+font_data = ExtResource( 27 )
 _sections_unfolded = [ "Font" ]
 
-[node name="UI" type="Control"]
+[node name="UI" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -72,16 +76,53 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
 
-[node name="ResearchButton" type="TextureButton" parent="." index="0"]
+[node name="IconResearch" type="TextureRect" parent="." index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 723.0
+margin_top = 745.0
+margin_right = 964.0
+margin_bottom = 809.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+stretch_mode = 4
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="ResearchAndLoadingContainer" type="CenterContainer" parent="." index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 726.0
-margin_top = 790.0
+margin_top = 796.0
 margin_right = 967.0
-margin_bottom = 842.0
+margin_bottom = 848.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+use_top_left = false
+
+[node name="ResearchButton" type="TextureButton" parent="ResearchAndLoadingContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 241.0
+margin_bottom = 52.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -93,11 +134,70 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 2 )
-texture_hover = ExtResource( 3 )
+texture_normal = ExtResource( 3 )
+texture_hover = ExtResource( 4 )
 _sections_unfolded = [ "Textures" ]
 
-[node name="ResearchContainer" type="HBoxContainer" parent="." index="1"]
+[node name="LifeBar" type="Control" parent="ResearchAndLoadingContainer" index="1"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 120.0
+margin_top = 26.0
+margin_right = 120.0
+margin_bottom = 26.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 5 )
+
+[node name="BG" type="ColorRect" parent="ResearchAndLoadingContainer/LifeBar" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -96.0
+margin_top = -5.0
+margin_right = -49.0
+margin_bottom = 3.0
+rect_scale = Vector2( 4, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.371094, 0.371094, 0.371094, 1 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="Health" type="ColorRect" parent="ResearchAndLoadingContainer/LifeBar" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -96.0
+margin_top = -5.0
+margin_right = -49.0
+margin_bottom = 3.0
+rect_scale = Vector2( 4, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0, 0.875, 0.300781, 1 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="ResearchContainer" type="HBoxContainer" parent="." index="2"]
 
 editor/display_folded = true
 visible = false
@@ -138,8 +238,8 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 4 )
-texture_hover = ExtResource( 5 )
+texture_normal = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
 _sections_unfolded = [ "Textures" ]
 
 [node name="Pisa" type="TextureButton" parent="ResearchContainer" index="1"]
@@ -162,11 +262,11 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 6 )
-texture_hover = ExtResource( 7 )
+texture_normal = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
 _sections_unfolded = [ "Textures" ]
 
-[node name="Rocket" type="TextureButton" parent="ResearchContainer" index="2"]
+[node name="Rocket Research" type="TextureButton" parent="ResearchContainer" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -186,12 +286,13 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 8 )
-texture_hover = ExtResource( 9 )
+texture_normal = ExtResource( 10 )
+texture_hover = ExtResource( 11 )
 _sections_unfolded = [ "Textures" ]
 
-[node name="BatimentsContainrer" type="HBoxContainer" parent="." index="2"]
+[node name="BatimentsContainrer" type="HBoxContainer" parent="." index="3"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -230,11 +331,11 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 10 )
-texture_hover = ExtResource( 11 )
+texture_normal = ExtResource( 12 )
+texture_hover = ExtResource( 13 )
 _sections_unfolded = [ "Rect", "Textures", "Theme" ]
 
-[node name="Warehouse" type="TextureButton" parent="BatimentsContainrer" index="1"]
+[node name="Generator" type="TextureButton" parent="BatimentsContainrer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -242,30 +343,6 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 242.0
 margin_right = 480.0
-margin_bottom = 251.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 12 )
-texture_hover = ExtResource( 13 )
-_sections_unfolded = [ "Rect", "Size Flags", "Textures" ]
-
-[node name="Generator" type="TextureButton" parent="BatimentsContainrer" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 484.0
-margin_right = 722.0
 margin_bottom = 251.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -280,6 +357,30 @@ group = null
 texture_normal = ExtResource( 14 )
 texture_hover = ExtResource( 15 )
 _sections_unfolded = [ "Size Flags", "Textures" ]
+
+[node name="Warehouse" type="TextureButton" parent="BatimentsContainrer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 484.0
+margin_right = 722.0
+margin_bottom = 251.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 16 )
+texture_hover = ExtResource( 17 )
+_sections_unfolded = [ "Rect", "Size Flags", "Textures" ]
 
 [node name="Laboratory" type="TextureButton" parent="BatimentsContainrer" index="3"]
 
@@ -301,8 +402,8 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = SubResource( 2 )
 group = null
-texture_normal = ExtResource( 16 )
-texture_hover = ExtResource( 17 )
+texture_normal = ExtResource( 18 )
+texture_hover = ExtResource( 19 )
 _sections_unfolded = [ "Size Flags", "Textures" ]
 
 [node name="Wall" type="TextureButton" parent="BatimentsContainrer" index="4"]
@@ -325,8 +426,8 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 18 )
-texture_hover = ExtResource( 19 )
+texture_normal = ExtResource( 20 )
+texture_hover = ExtResource( 21 )
 _sections_unfolded = [ "Size Flags", "Textures" ]
 
 [node name="Turret" type="TextureButton" parent="BatimentsContainrer" index="5"]
@@ -349,8 +450,8 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 20 )
-texture_hover = ExtResource( 21 )
+texture_normal = ExtResource( 22 )
+texture_hover = ExtResource( 23 )
 _sections_unfolded = [ "Rect", "Size Flags", "Textures" ]
 
 [node name="Rocket" type="TextureButton" parent="BatimentsContainrer" index="6"]
@@ -373,12 +474,13 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 22 )
-texture_hover = ExtResource( 23 )
+texture_normal = ExtResource( 24 )
+texture_hover = ExtResource( 25 )
 _sections_unfolded = [ "Rect", "Size Flags", "Textures" ]
 
 [node name="TextureRect" type="TextureRect" parent="BatimentsContainrer" index="7"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -392,7 +494,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 24 )
+texture = ExtResource( 26 )
 stretch_mode = 0
 
 [node name="RessourcesContainer" type="VBoxContainer" parent="BatimentsContainrer/TextureRect" index="0"]
@@ -440,6 +542,7 @@ _sections_unfolded = [ "Size Flags", "custom_fonts" ]
 
 [node name="MineralsContainer" type="CenterContainer" parent="BatimentsContainrer/TextureRect/RessourcesContainer" index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -512,7 +615,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 3
-texture = ExtResource( 26 )
+texture = ExtResource( 28 )
 stretch_mode = 4
 _sections_unfolded = [ "Size Flags", "Theme" ]
 
@@ -542,6 +645,7 @@ _sections_unfolded = [ "Size Flags", "custom_fonts" ]
 
 [node name="EnergieContainer2" type="CenterContainer" parent="BatimentsContainrer/TextureRect/RessourcesContainer" index="3"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -613,7 +717,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 27 )
+texture = ExtResource( 29 )
 stretch_mode = 0
 
 [node name="Research Speed" type="Label" parent="BatimentsContainrer/TextureRect/RessourcesContainer" index="4"]
@@ -713,7 +817,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 27 )
+texture = ExtResource( 30 )
 stretch_mode = 0
 
 [node name="Production Speed" type="Label" parent="BatimentsContainrer/TextureRect/RessourcesContainer" index="6"]
@@ -813,10 +917,10 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 27 )
+texture = ExtResource( 31 )
 stretch_mode = 0
 
-[node name="TimerContainer" type="CenterContainer" parent="." index="3"]
+[node name="TimerContainer" type="CenterContainer" parent="." index="4"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -896,14 +1000,38 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[connection signal="pressed" from="ResearchButton" to="." method="_on_ResearchButton_pressed"]
+[node name="GlobalTimer" type="Timer" parent="." index="5"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[node name="SecondTimer" type="Timer" parent="." index="6"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[connection signal="pressed" from="ResearchAndLoadingContainer/ResearchButton" to="." method="_on_ResearchButton_pressed"]
+
+[connection signal="pressed" from="ResearchContainer/Upgrade Limit" to="." method="_on_Upgrade_Limit_pressed"]
+
+[connection signal="pressed" from="ResearchContainer/Pisa" to="." method="_on_Pisa_pressed"]
+
+[connection signal="pressed" from="ResearchContainer/Rocket Research" to="." method="_on_Rocket_Research_pressed"]
 
 [connection signal="pressed" from="BatimentsContainrer/Mine" to="." method="_on_Mine_pressed"]
 
-[connection signal="pressed" from="BatimentsContainrer/Warehouse" to="." method="_on_Warehouse_pressed"]
-
 [connection signal="pressed" from="BatimentsContainrer/Generator" to="." method="_on_Generator_pressed"]
 
+[connection signal="pressed" from="BatimentsContainrer/Warehouse" to="." method="_on_Warehouse_pressed"]
+
 [connection signal="pressed" from="BatimentsContainrer/Laboratory" to="." method="_on_Laboratory_pressed"]
+
+[connection signal="timeout" from="GlobalTimer" to="." method="on_research_over"]
+
+[connection signal="timeout" from="SecondTimer" to="." method="update_loading_bar"]
 
 

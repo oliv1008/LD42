@@ -7,7 +7,7 @@
 [ext_resource path="res://MAIN/Corruption.gd" type="Script" id=5]
 [ext_resource path="res://ENNEMIES/Ennemies.tscn" type="PackedScene" id=6]
 
-[node name="Main" type="Node2D" index="0"]
+[node name="Main" type="Node2D"]
 
 script = ExtResource( 1 )
 
