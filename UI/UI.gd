@@ -5,6 +5,21 @@ var TextureResearchIcon = { "Sky_is" : preload("res://Assets/Pixel Art/Icones/ic
 							"Rocket" : preload("res://Assets/Pixel Art/Icones/icone tech rocket.png")
 }
 
+var Ski_is_research_cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+var Ski_is_research_time = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+var Ski_is_level = 0
+const MAX_SKY_LEVEL = 9
+
+var Pisa_research_cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+var Pisa_research_time = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+var Pisa_level = 0
+const MAX_PISA_LEVEL = 3
+
+var Rocket_research_cost = [1]
+var Rocket_research_time = [10]
+var Rocket_level = 0
+const MAX_ROCKET_LEVEL = 1
+
 var current_research
 
 func _ready():
@@ -25,40 +40,90 @@ func _ready():
 func _process(delta):
 	var ressources = Global.ressources
 	var energy_available = Global.energy - Global.energyconsummed
-	if ressources < Global.COST_MINE and energy_available < Global.ENERGY_MINE:
+#------------BATIMENTS--------------------------
+	if ressources < Global.COST_MINE or energy_available < Global.ENERGY_MINE:
 		$BatimentsContainrer/Mine.disabled = true
 	else:
 		$BatimentsContainrer/Mine.disabled = false
 		
-	if ressources < Global.COST_GENERATEUR and energy_available < Global.ENERGY_GENERATEUR:
+	if ressources < Global.COST_GENERATEUR or energy_available < Global.ENERGY_GENERATEUR:
 		$BatimentsContainrer/Generator.disabled = true
 	else:
 		$BatimentsContainrer/Generator.disabled = false
 	
-	if ressources < Global.COST_ENTREPOT and energy_available < Global.ENERGY_ENTREPOT:
+	if ressources < Global.COST_ENTREPOT or energy_available < Global.ENERGY_ENTREPOT:
 		$BatimentsContainrer/Warehouse.disabled = true
 	else:
 		$BatimentsContainrer/Warehouse.disabled = false
 		
-	if ressources < Global.COST_LAB and energy_available < Global.ENERGY_LAB:
+	if ressources < Global.COST_LAB or energy_available < Global.ENERGY_LAB:
 		$BatimentsContainrer/Laboratory.disabled = true
 	else:
 		$BatimentsContainrer/Laboratory.disabled = false
 		
-	if ressources < Global.COST_MUR and energy_available < Global.ENERGY_MUR:
+	if ressources < Global.COST_MUR or energy_available < Global.ENERGY_MUR:
 		$BatimentsContainrer/Wall.disabled = true
 	else:
 		$BatimentsContainrer/Wall.disabled = false
 	
-	if ressources < Global.COST_ROCKET and energy_available < Global.ENERGY_ROCKET:
+	if Global.isRocketResearched == false or ressources < Global.COST_ROCKET or energy_available < Global.ENERGY_ROCKET:
 		$BatimentsContainrer/Rocket.disabled = true
 	else:
 		$BatimentsContainrer/Rocket.disabled = false
 	
-	if ressources < Global.COST_TURRET and energy_available < Global.ENERGY_TURRET:
+	if ressources < Global.COST_TURRET or energy_available < Global.ENERGY_TURRET:
 		$BatimentsContainrer/Turret.disabled = true
 	else:
 		$BatimentsContainrer/Turret.disabled = false
+		
+	if Global.isLabBuilt == false:
+		$ResearchAndLoadingContainer/ResearchButton.disabled = true
+	else:
+		$ResearchAndLoadingContainer/ResearchButton.disabled = false
+#------------------------RECHERCHES--------------------------
+	if ressources < Ski_is_research_cost[Ski_is_level]:
+		$"ResearchContainer/Upgrade Limit".disabled = true
+	else:
+		$"ResearchContainer/Upgrade Limit".disabled = false
+		
+	if ressources < Pisa_research_cost[Pisa_level]:
+		$ResearchContainer/Pisa.disabled = true
+	else:
+		$ResearchContainer/Pisa.disabled = false
+	
+	if Rocket_level >= 1 or ressources < Rocket_research_cost[Rocket_level]:
+		$"ResearchContainer/Rocket Research".disabled = true
+	else:
+		$"ResearchContainer/Rocket Research".disabled = false
+	
+	if $ResearchContainer.visible == true:
+		
+		if !Ski_is_level >= MAX_SKY_LEVEL:
+			$"ResearchContainer/Upgrade Limit/Container/TimeContainer/Time".text = str(Ski_is_research_time[Ski_is_level])
+			$"ResearchContainer/Upgrade Limit/Container/MineraiContainer2/- XXX".text = str("- ", Ski_is_research_cost[Ski_is_level])
+		else:
+			$"ResearchContainer/Upgrade Limit/Container/TimeContainer/Time".visible = false
+			$"ResearchContainer/Upgrade Limit/Container/TimeContainer/MineraiText".visible = false
+			$"ResearchContainer/Upgrade Limit/Container/MineraiContainer2/- XXX".visible = false
+			$"ResearchContainer/Upgrade Limit/Container/MineraiContainer2/MineraiText".visible = false
+		
+		if !Pisa_level >= MAX_PISA_LEVEL:
+			$ResearchContainer/Pisa/Container2/TimeContainer/Time.text = str(Pisa_research_time[Pisa_level])
+			$"ResearchContainer/Pisa/Container2/MineraiContainer2/- XXX".text = str("- ", Pisa_research_cost[Pisa_level])
+		else:
+			$ResearchContainer/Pisa/Container2/TimeContainer/Time.visible = false
+			$ResearchContainer/Pisa/Container2/TimeContainer/MineraiText.visible = false
+			$"ResearchContainer/Pisa/Container2/MineraiContainer2/- XXX".visible = false
+			$"ResearchContainer/Pisa/Container2/MineraiContainer2/MineraiText".visible = false
+			
+		if !Rocket_level >= MAX_ROCKET_LEVEL:
+			$"ResearchContainer/Rocket Research/Container3/TimeContainer/Time".text = str(Rocket_research_time[Rocket_level])
+			$"ResearchContainer/Rocket Research/Container3/MineraiContainer2/- XXX".text = str("- ", Rocket_research_cost[Rocket_level])
+		else:
+			$"ResearchContainer/Rocket Research/Container3/TimeContainer/Time".visible = false
+			$"ResearchContainer/Rocket Research/Container3/TimeContainer/MineraiText".visible = false
+			$"ResearchContainer/Rocket Research/Container3/MineraiContainer2/- XXX".visible = false
+			$"ResearchContainer/Rocket Research/Container3/MineraiContainer2/MineraiText".visible = false
 
 func _on_Laboratory_pressed():
 	Global.initScene(Global.labScene)
@@ -88,47 +153,60 @@ func _on_ResearchButton_pressed():
 		$ResearchContainer.visible = false
 
 func _on_Upgrade_Limit_pressed():
-#On check d'abord pour voir si le joueur peut lancer la recherche	
-#A IMPLEMENTER
-	current_research = "Sky_is"
-	$IconResearch.texture = TextureResearchIcon.Sky_is
-	$IconResearch.visible = true
-	$ResearchContainer.visible = false
-	$GlobalTimer.wait_time = 10
-	$GlobalTimer.start()
-	$ResearchAndLoadingContainer/LifeBar.visible = true
-	$ResearchAndLoadingContainer/ResearchButton.visible = false
-	$ResearchAndLoadingContainer/LifeBar.update(0, 100)
-	$SecondTimer.start()
+#On check d'abord pour voir si le joueur peut lancer la recherche
+	var ressources = Global.ressources
+	if ressources < Ski_is_research_cost[Ski_is_level] or Ski_is_level >= 9:
+		pass
+	else:
+		current_research = "Sky_is"
+		$IconResearch.texture = TextureResearchIcon.Sky_is
+		$IconResearch.visible = true
+		$ResearchContainer.visible = false
+		$GlobalTimer.wait_time = Ski_is_research_time[Ski_is_level]
+		$GlobalTimer.start()
+		$ResearchAndLoadingContainer/LifeBar.visible = true
+		$ResearchAndLoadingContainer/ResearchButton.visible = false
+		$ResearchAndLoadingContainer/LifeBar.update(0, 100)
+		$SecondTimer.start()
+		Ski_is_level += 1
 
 func _on_Pisa_pressed():
 #On check d'abord pour voir si le joueur peut lancer la recherche	
-#A IMPLEMENTER
-	current_research = "Pisa"
-	$IconResearch.texture = TextureResearchIcon.Pisa
-	$IconResearch.visible = true
-	$ResearchContainer.visible = false
-	$GlobalTimer.wait_time = 10
-	$GlobalTimer.start()
-	$ResearchAndLoadingContainer/LifeBar.visible = true
-	$ResearchAndLoadingContainer/ResearchButton.visible = false
-	$ResearchAndLoadingContainer/LifeBar.update(0, 100)
-	$SecondTimer.start()
+	var ressources = Global.ressources
+	if ressources < Pisa_research_cost[Pisa_level] or Pisa_level >= 9:
+		pass
+	else:
+		current_research = "Pisa"
+		$IconResearch.texture = TextureResearchIcon.Pisa
+		$IconResearch.visible = true
+		$ResearchContainer.visible = false
+		$GlobalTimer.wait_time = Pisa_research_time[Pisa_level]
+		$GlobalTimer.start()
+		$ResearchAndLoadingContainer/LifeBar.visible = true
+		$ResearchAndLoadingContainer/ResearchButton.visible = false
+		$ResearchAndLoadingContainer/LifeBar.update(0, 100)
+		$SecondTimer.start()
+		Pisa_level += 1
 
 
 func _on_Rocket_Research_pressed():
 #On check d'abord pour voir si le joueur peut lancer la recherche	
 #A IMPLEMENTER
-	current_research = "Rocket"
-	$IconResearch.texture = TextureResearchIcon.Rocket
-	$IconResearch.visible = true
-	$ResearchContainer.visible = false
-	$GlobalTimer.wait_time = 10
-	$GlobalTimer.start()
-	$ResearchAndLoadingContainer/LifeBar.visible = true
-	$ResearchAndLoadingContainer/ResearchButton.visible = false
-	$ResearchAndLoadingContainer/LifeBar.update(0, 100)
-	$SecondTimer.start()
+	var ressources = Global.ressources
+	if ressources < Rocket_research_cost[Rocket_level] or Rocket_level >= 1:
+		pass
+	else:
+		current_research = "Rocket"
+		$IconResearch.texture = TextureResearchIcon.Rocket
+		$IconResearch.visible = true
+		$ResearchContainer.visible = false
+		$GlobalTimer.wait_time = Rocket_research_time[Rocket_level]
+		$GlobalTimer.start()
+		$ResearchAndLoadingContainer/LifeBar.visible = true
+		$ResearchAndLoadingContainer/ResearchButton.visible = false
+		$ResearchAndLoadingContainer/LifeBar.update(0, 100)
+		$SecondTimer.start()
+		Rocket_level += 1
 	
 func update_loading_bar():
 	var time_passed = $GlobalTimer.wait_time - $GlobalTimer.time_left
@@ -146,4 +224,4 @@ func on_research_over():
 	if current_research == "Pisa":
 		Global.maxTourDePise += 1
 	if current_research == "Rocket":
-		pass
+		Global.isRocketResearched = true

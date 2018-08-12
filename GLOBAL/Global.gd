@@ -12,6 +12,8 @@ var energy = 100
 var energyconsummed = 0
 var researchSpeed = 0
 
+var isLabBuilt = false
+var isRocketResearched = false
 var hauteurMaxDeConstruction = 5
 var maxTourDePise = 1 
 
@@ -19,7 +21,7 @@ const GRID_LENGHT = 100
 const GRID_HEIGH = 100
 const CELL_SIZE = 64
 
-const COST_LAB = 75
+const COST_LAB = 1
 const COST_MINE = 50
 const COST_ENTREPOT = 1
 const COST_GENERATEUR = 1
@@ -27,7 +29,7 @@ const COST_MUR = 50
 const COST_TURRET = 1
 const COST_ROCKET = 1
 
-const ENERGY_LAB = 80
+const ENERGY_LAB = 1
 const ENERGY_MINE = 40
 const ENERGY_ENTREPOT = 1
 const ENERGY_GENERATEUR = 0

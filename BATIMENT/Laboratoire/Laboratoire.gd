@@ -12,3 +12,4 @@ var boostScale = [1, 1.2, 1.5, 2, 3]
 func specific_build():
 	researchSpeed = boostScale[boostLevel - 1]
 	Global.researchSpeed += researchSpeed
+	Global.isLabBuilt = true
