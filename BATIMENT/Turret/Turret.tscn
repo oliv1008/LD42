@@ -1,0 +1,125 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://BATIMENT/Turret/Turret.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Pixel Art/Batiments/Turret/Turret.png" type="Texture" id=2]
+[ext_resource path="res://BATIMENT/Disparition Sprite.anim" type="Animation" id=3]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "Laser"
+length = 0.3
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Laser:points")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ PoolVector2Array( -32, -16, -32, -16 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "Laser reset"
+length = 0.05
+loop = false
+step = 0.05
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.05 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "resetLaser"
+} ]
+}
+
+[sub_resource type="CircleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 496.0
+
+[node name="Turret" type="Node2D"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Laser" type="Line2D" parent="." index="0"]
+
+points = PoolVector2Array( -20, -19.6, -17, -19.6 )
+width = 4.0
+default_color = Color( 1, 0, 0, 1 )
+texture_mode = 761769200
+sharp_limit = 2.0
+round_precision = 8
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+
+modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Animation", "Material", "Transform", "Visibility" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+"anims/Disparition Sprite" = ExtResource( 3 )
+anims/Laser = SubResource( 1 )
+"anims/Laser reset" = SubResource( 3 )
+blend_times = [  ]
+
+[node name="Area2D" type="Area2D" parent="." index="3"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Line2D" type="Line2D" parent="." index="4"]
+
+points = PoolVector2Array( 480, 0, 464, -128, 416, -240, 336, -336, 240, -416, 128, -464, 0, -480, -128, -464, -240, -416, -336, -336, -416, -240, -464, -128, -480, 0, -464, 128, -416, 240, -336, 336, -240, 416, -128, 464, 0, 480, 128, 464, 240, 416, 336, 336, 416, 240, 464, 112, 480, 0 )
+width = 4.0
+default_color = Color( 0.180344, 0.871094, 0.417789, 0.348078 )
+texture_mode = 684549104
+sharp_limit = 2.0
+round_precision = 8
+
+[node name="Timer" type="Timer" parent="." index="5"]
+
+process_mode = 1
+wait_time = 3.0
+one_shot = false
+autostart = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+

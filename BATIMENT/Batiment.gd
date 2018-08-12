@@ -11,10 +11,14 @@ var ressourcesProduction = 0
 var stock = 0
 var attackSpeed = 0
 var researchSpeed = 0
+var health
+var maxHealth
 
-enum types {LABORATOIRE, MINE, ENTREPOT, GENERATEUR, TOURELLE}
-var Prices = {LABORATOIRE:Global.COST_LAB, MINE:Global.COST_MINE, ENTREPOT:Global.COST_ENTREPOT, GENERATEUR:Global.COST_GENERATEUR}
-var Energies = {LABORATOIRE:Global.ENERGY_LAB, MINE:Global.ENERGY_MINE, ENTREPOT:Global.ENERGY_ENTREPOT, GENERATEUR:Global.ENERGY_GENERATEUR}
+var Prices = {Global.LABORATOIRE:Global.COST_LAB, Global.MINE:Global.COST_MINE, Global.ENTREPOT:Global.COST_ENTREPOT,\
+		 Global.GENERATEUR:Global.COST_GENERATEUR, Global.MUR:Global.COST_MUR, Global.TURRET:Global.COST_TURRET, Global.ROCKET:Global.COST_ROCKET}
+var Energies = {Global.LABORATOIRE:Global.ENERGY_LAB, Global.MINE:Global.ENERGY_MINE,\
+		Global.ENTREPOT:Global.ENERGY_ENTREPOT, Global.GENERATEUR:Global.ENERGY_GENERATEUR,\
+		Global.MUR:Global.ENERGY_MUR, Global.TURRET:Global.ENERGY_TURRET, Global.ROCKET:Global.ENERGY_ROCKET}
 func _input(event):
 	if state == 0 and event is InputEventMouseMotion:
 		pos = get_global_mouse_position()
@@ -36,9 +40,11 @@ func _input(event):
 
 func build():
 	state = 1
-	$Sprite.modulate = Color(1, 1, 1, 1)	
+	$Sprite.modulate = Color(1, 1, 1, 1)
 	boostLevel = compute_boost()
+	$Sprite.texture = Global.Textures[type][boostLevel - 1]
 	set_process_input(false)
+	Global.currentNode = null
 	Global.Batiments.append(self)
 	Global.add_building_grid(self)
 	Global.ressources -= Prices[type]
@@ -52,35 +58,40 @@ func compute_boost():
 			tempMax = Global.Grid[x][pos.y - 1].boostLevel
 	return boostLevel + tempMax
 
-func turnOff():
-	if type == MINE:
+func turnOff(outOfEnergy = true):
+	if type == Global.MINE:
 		Global.production -= ressourcesProduction
-	elif type == LABORATOIRE:
+	elif type == Global.LABORATOIRE:
 		Global.researchSpeed -= researchSpeed
-	elif type == ENTREPOT:
+	elif type == Global.ENTREPOT:
 		Global.stock -= stock
-	elif type == TOURELLE:
-		Global.attackSpeed -= attackSpeed
+	elif type == Global.TURRET:
+		state = 2
 	Global.energyconsummed -= Energies[type]
-	$Sprite.modulate = Color(1, 0, 0, 0.5)
+
+	if outOfEnergy:
+		add_child(Global.noCurrentScene.instance())
+		$Sprite.modulate = Color(1, 0, 0, 0.5)
 	
 func turnOn():
-	if type == MINE:
+	if type == Global.MINE:
 		Global.production += ressourcesProduction
-	elif type == LABORATOIRE:
+	elif type == Global.LABORATOIRE:
 		Global.researchSpeed += researchSpeed
-	elif type == ENTREPOT:
+	elif type == Global.ENTREPOT:
 		Global.stock += stock
-	elif type == TOURELLE:
-		Global.attackSpeed += attackSpeed
+	elif type == Global.TURRET:
+		state = 1
 	Global.energyconsummed += Energies[type]
 	$Sprite.modulate = Color(1, 1, 1, 1)
+	$NoCurrent.queue_free()
 
-func corrupted():
-	smartRemove()
+func corrupted(): 
+	smartRemove(false)
 
-func smartRemove():
-	turnOff()
+func smartRemove(outOfEnergy = false):
+	print("REMOVE")
+	turnOff(outOfEnergy)
 	energyProduction = 0
 	ressourcesProduction = 0
 	stock = 0
@@ -97,20 +108,46 @@ func smartRemove():
 		for y in range (pos.y, pos.y + size.y):
 			Global.Grid[x][y] = null
 	handleSuperiorBuildings()
-	queue_free()
-	print(Global.production)
+	$AnimationPlayer.play("Disparition Sprite")
 
+func endOfAnimation():
+	queue_free()
+	
 func handleSuperiorBuildings():
 	var nodesToCheck = []
 	for x in range (pos.x, pos.x + size.x):
-		if Global.Grid[x][pos.y + size.y + 1] != null:
-			nodesToCheck.append(Global.Grid[x][pos.y + size.y + 1])
+		if Global.Grid[x][pos.y + size.y] != null and nodesToCheck.find(Global.Grid[x][pos.y + size.y]) == -1:
+			nodesToCheck.append(Global.Grid[x][pos.y + size.y])
 	for node in nodesToCheck:
 		var underMe = 0
 		for x in range (node.pos.x, node.pos.x + node.size.x):
 			if node.pos.y - 1 >= 0 and Global.Grid[x][node.pos.y - 1] != null and Global.Grid[x][node.pos.y - 1] != self:
 				underMe += 1
-			if node.size.x - underMe > Global.maxTourDePise:
-				node.smartRemove()
+		if node.size.x - underMe > Global.maxTourDePise:
+			node.smartRemove()
+
+var lifeScene = preload("res://LIFEBAR/LifeBar.tscn")
+
+func receiveAttack(dmg):
+	health -= float(dmg)
+	updateHealth()
+
+func updateHealth():
+	if health <= 0:
+		smartRemove()
+	else:
+		updateLifeBar()
+		
+var isFullLife = true
+func updateLifeBar():
+	if isFullLife:
+		isFullLife = false
+		initLifeBar()
+	$LifeBar.update(float(health), float(maxHealth))
+	
+func initLifeBar():
+	var node = lifeScene.instance()
+	add_child(node)
+	
 func specific_build():
 	pass
