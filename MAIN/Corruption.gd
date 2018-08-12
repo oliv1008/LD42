@@ -20,3 +20,21 @@ func CorruptionProgress():
 			building.corrupted()
 	corruptionLevel += 1
 	Global.corruptionLevel = corruptionLevel
+
+func _on_MobWave_timeout():
+	new_mob_wave()
+
+var ennemyScene = preload("res://ENNEMIES/Ennemies.tscn")
+var ennemiesPerWaveSide = 2
+
+func new_mob_wave():
+	for i in range(0, ennemiesPerWaveSide):
+		var ennemy = ennemyScene.instance()
+		add_child(ennemy)
+		ennemy.direction = pow(-1, randi() % 2 + 1)
+		if ennemy.direction == 1:
+			ennemy.position = Vector2(-210, -40)
+		else :
+			ennemy.position = Vector2(6456, -40)
+			ennemy.get_node("Sprite").flip_h = true
+			

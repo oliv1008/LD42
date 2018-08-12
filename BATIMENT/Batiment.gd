@@ -13,6 +13,7 @@ var attackSpeed = 0
 var researchSpeed = 0
 var health
 var maxHealth
+var isOff = false
 
 var Prices = {Global.LABORATOIRE:Global.COST_LAB, Global.MINE:Global.COST_MINE, Global.ENTREPOT:Global.COST_ENTREPOT,\
 		 Global.GENERATEUR:Global.COST_GENERATEUR, Global.MUR:Global.COST_MUR, Global.TURRET:Global.COST_TURRET, Global.ROCKET:Global.COST_ROCKET}
@@ -61,21 +62,23 @@ func compute_boost():
 	return boostLevel + tempMax
 
 func turnOff(outOfEnergy = true):
-	if type == Global.MINE:
-		Global.production -= ressourcesProduction
-	elif type == Global.LABORATOIRE:
-		Global.researchSpeed -= researchSpeed
-	elif type == Global.ENTREPOT:
-		Global.stock -= stock
-	elif type == Global.TURRET:
-		state = 2
-	Global.energyconsummed -= Energies[type]
-
-	if outOfEnergy:
-		add_child(Global.noCurrentScene.instance())
-		$Sprite.modulate = Color(1, 0, 0, 0.5)
+	if isOff == false:
+		if type == Global.MINE:
+			Global.production -= ressourcesProduction
+		elif type == Global.LABORATOIRE:
+			Global.researchSpeed -= researchSpeed
+		elif type == Global.ENTREPOT:
+			Global.stock -= stock
+		elif type == Global.TURRET:
+			state = 2
+		Global.energyconsummed -= Energies[type]
 	
+		if outOfEnergy:
+			add_child(Global.noCurrentScene.instance())
+		$Sprite.modulate = Color(1, 0, 0, 0.5)
+		isOff = true
 func turnOn():
+	isOff = false
 	if type == Global.MINE:
 		Global.production += ressourcesProduction
 	elif type == Global.LABORATOIRE:
@@ -123,9 +126,10 @@ func handleSuperiorBuildings():
 	for node in nodesToCheck:
 		var underMe = 0
 		for x in range (node.pos.x, node.pos.x + node.size.x):
-			if node.pos.y - 1 >= 0 and Global.Grid[x][node.pos.y - 1] != null and Global.Grid[x][node.pos.y - 1] != self:
+			print("SUPERIOR")
+			if Global.Grid[x][node.pos.y - 1] != null and Global.Grid[x][node.pos.y - 1] != self:
 				underMe += 1
-		if node.size.x - underMe > Global.maxTourDePise:
+		if node.size.x - underMe > Global.maxTourDePise or underMe == 0:
 			node.smartRemove()
 
 var lifeScene = preload("res://LIFEBAR/LifeBar.tscn")
