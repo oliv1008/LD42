@@ -12,8 +12,10 @@ var energy = 100
 var energyconsummed = 0
 var researchSpeed = 0
 
+var isLabBuilt = false
+var isRocketResearched = false
 var hauteurMaxDeConstruction = 1
-var maxTourDePise = 1 
+var maxTourDePise = 0
 
 const GRID_LENGHT = 100
 const GRID_HEIGH = 100
@@ -22,15 +24,15 @@ const CORRRUPTION_SPEED = 5
 
 const COST_LAB = 75
 const COST_MINE = 50
-const COST_ENTREPOT = 1
-const COST_GENERATEUR = 1
+const COST_ENTREPOT = 50
+const COST_GENERATEUR = 25
 const COST_MUR = 50
-const COST_TURRET = 1
+const COST_TURRET = 50
 const COST_ROCKET = 1
 
-const ENERGY_LAB = 80
+const ENERGY_LAB = 40
 const ENERGY_MINE = 40
-const ENERGY_ENTREPOT = 1
+const ENERGY_ENTREPOT = 10
 const ENERGY_GENERATEUR = 0
 const ENERGY_MUR = 0
 const ENERGY_TURRET = 10
@@ -102,9 +104,11 @@ var rocketSceneSprites = [preload("res://Assets/Pixel Art/Batiments/Rocket.png")
 enum types {LABORATOIRE, MINE, ENTREPOT, GENERATEUR, MUR, TURRET, ROCKET}
 var Textures = {LABORATOIRE:labSceneSprites, GENERATEUR:generatorSceneSprites, MINE:mineSceneSprites,\
 		TURRET:turretSceneSprites, ENTREPOT:entrepotSceneSprites, MUR:murSceneSprites, ROCKET:rocketSceneSprites}
-
+var labNumber = 0
 var currentNode
 func _process(delta):
+	if labNumber == 0:
+		isLabBuilt = false
 	if energyconsummed > energy:
 		turnOffBuildings()
 	elif BatimentsOff.size() > 0:

@@ -15,6 +15,7 @@ var health
 var maxHealth
 var isOff = false
 var pitch_scales = [1.0, 1.2, 1.4, 1.6, 2.0, 3.0]
+var maxBoostLevel = 5
 
 var Prices = {Global.LABORATOIRE:Global.COST_LAB, Global.MINE:Global.COST_MINE, Global.ENTREPOT:Global.COST_ENTREPOT,\
 		 Global.GENERATEUR:Global.COST_GENERATEUR, Global.MUR:Global.COST_MUR, Global.TURRET:Global.COST_TURRET, Global.ROCKET:Global.COST_ROCKET}
@@ -48,6 +49,8 @@ func build():
 	set_process_input(false)
 	Global.currentNode = null
 	Global.Batiments.append(self)
+	if type == Global.LABORATOIRE:
+		Global.labNumber += 1
 	Global.add_building_grid(self)
 	Global.ressources -= Prices[type]
 	Global.energyconsummed += Energies[type]
@@ -63,7 +66,7 @@ func compute_boost():
 	for x in range(pos.x, pos.x + size.x):
 		if pos.y > 0 and Global.Grid[x][pos.y - 1] != null and Global.Grid[x][pos.y - 1].type == type and Global.Grid[x][pos.y - 1].boostLevel > tempMax:
 			tempMax = Global.Grid[x][pos.y - 1].boostLevel
-	return boostLevel + tempMax
+	return clamp(boostLevel + tempMax, 0, maxBoostLevel)
 
 func turnOff(outOfEnergy = true):
 	if isOff == false:
@@ -81,6 +84,9 @@ func turnOff(outOfEnergy = true):
 			add_child(Global.noCurrentScene.instance())
 		$Sprite.modulate = Color(1, 0, 0, 0.5)
 		isOff = true
+		
+		if type == Global.LABORATOIRE:
+			Global.labNumber -= 1
 func turnOn():
 	isOff = false
 	if type == Global.MINE:
@@ -91,6 +97,9 @@ func turnOn():
 		Global.stock += stock
 	elif type == Global.TURRET:
 		state = 1
+		
+	if type == Global.LABORATOIRE:
+		Global.labNumber += 1
 	Global.energyconsummed += Energies[type]
 	$Sprite.modulate = Color(1, 1, 1, 1)
 	$NoCurrent.queue_free()

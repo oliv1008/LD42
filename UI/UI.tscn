@@ -1,37 +1,48 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://UI/UI.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Pixel Art/Icones/icone augmente limite tech.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Pixel Art/Boutons/ResearchButton/Normal.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Pixel Art/Boutons/ResearchButton/Hover.png" type="Texture" id=4]
-[ext_resource path="res://LIFEBAR/LifeBar.gd" type="Script" id=5]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Ski is the limit/Normal.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Ski is the limit/Hover.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Leaning tower of Pisa/Normal.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Leaning tower of Pisa/Hover.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Pixel Art/Boutons/To infinity and beyond/Normal.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Pixel Art/Boutons/To infinity and beyond/Hover.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Mine/Normal.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Mine/Hover.png" type="Texture" id=13]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Generator/Normal.png" type="Texture" id=14]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Generator/Hover.png" type="Texture" id=15]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Warehouse/Normal.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Warehouse/Hover.png" type="Texture" id=17]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Labo/Normal.png" type="Texture" id=18]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Labo/Hover.png" type="Texture" id=19]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Mur/Normal.png" type="Texture" id=20]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Mur/Hover.png" type="Texture" id=21]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Turret/Normal.png" type="Texture" id=22]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Turret/Hover.png" type="Texture" id=23]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Rocket/Normal.png" type="Texture" id=24]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Rocket/Hover.png" type="Texture" id=25]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Icone vide.png" type="Texture" id=26]
-[ext_resource path="res://Cave-Story.ttf" type="DynamicFontData" id=27]
-[ext_resource path="res://Assets/Pixel Art/Icones/Icone minerai alpha.png" type="Texture" id=28]
-[ext_resource path="res://Assets/Pixel Art/Icones/Icone energie alpha.png" type="Texture" id=29]
-[ext_resource path="res://Assets/Pixel Art/Icones/icone prod labo.png" type="Texture" id=30]
-[ext_resource path="res://Assets/Pixel Art/Icones/icone prod mineraux.png" type="Texture" id=31]
-[ext_resource path="res://UI/Time.gd" type="Script" id=32]
+[ext_resource path="res://Assets/Pixel Art/Boutons/ResearchButton/Disabled.png" type="Texture" id=5]
+[ext_resource path="res://LIFEBAR/LifeBar.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Ski is the limit/Normal.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Ski is the limit/Hover.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Ski is the limit/Disabled.png" type="Texture" id=9]
+[ext_resource path="res://Assets/caves-story-32.tres" type="DynamicFont" id=10]
+[ext_resource path="res://Assets/Pixel Art/Icones/Icone minerai alpha.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Pixel Art/Icones/Sablier32 alpha.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Leaning tower of Pisa/Normal.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Leaning tower of Pisa/Hover.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Leaning tower of Pisa/Disabled.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Pixel Art/Boutons/To infinity and beyond/Normal.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Pixel Art/Boutons/To infinity and beyond/Hover.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Pixel Art/Boutons/To infinity and beyond/Disabled.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Mine/Normal.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Mine/Hover.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Warehouse/Disabled.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Pixel Art/Icones/Icone energie alpha.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Generator/Normal.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Generator/Hover.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Generator/Disabled.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Warehouse/Normal.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Warehouse/Hover.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Labo/Normal.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Labo/Hover.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Labo/Disabled.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Mur/Normal.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Mur/Hover.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Mur/Disabled.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Turret/Normal.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Turret/Hover.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Turret/Disabled.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Rocket/Normal.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Rocket/Hover.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Rocket/Disabled.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Icone vide.png" type="Texture" id=40]
+[ext_resource path="res://Cave-Story.ttf" type="DynamicFontData" id=41]
+[ext_resource path="res://Assets/Pixel Art/Icones/icone prod labo.png" type="Texture" id=42]
+[ext_resource path="res://Assets/Pixel Art/Icones/icone prod mineraux.png" type="Texture" id=43]
 
 [sub_resource type="InputEventMouseButton" id=1]
 
@@ -58,10 +69,10 @@ shortcut = SubResource( 1 )
 size = 32
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 27 )
+font_data = ExtResource( 41 )
 _sections_unfolded = [ "Font" ]
 
-[node name="UI" type="Control"]
+[node name="UI" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -138,6 +149,7 @@ shortcut = null
 group = null
 texture_normal = ExtResource( 3 )
 texture_hover = ExtResource( 4 )
+texture_disabled = ExtResource( 5 )
 _sections_unfolded = [ "Textures" ]
 
 [node name="LifeBar" type="Control" parent="ResearchAndLoadingContainer" index="1"]
@@ -157,7 +169,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 
 [node name="BG" type="ColorRect" parent="ResearchAndLoadingContainer/LifeBar" index="0"]
 
@@ -201,7 +213,6 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="ResearchContainer" type="HBoxContainer" parent="." index="2"]
 
-editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -223,6 +234,7 @@ _sections_unfolded = [ "Size Flags", "custom_constants" ]
 
 [node name="Upgrade Limit" type="TextureButton" parent="ResearchContainer" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -240,12 +252,152 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 6 )
-texture_hover = ExtResource( 7 )
+texture_normal = ExtResource( 7 )
+texture_hover = ExtResource( 8 )
+texture_disabled = ExtResource( 9 )
 _sections_unfolded = [ "Textures" ]
+
+[node name="Container" type="Container" parent="ResearchContainer/Upgrade Limit" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -50.0
+margin_top = 30.0
+margin_right = -10.0
+margin_bottom = 70.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="MineraiContainer2" type="Container" parent="ResearchContainer/Upgrade Limit/Container" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 91.0
+margin_top = 127.0
+margin_right = 131.0
+margin_bottom = 167.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="- XXX" type="Label" parent="ResearchContainer/Upgrade Limit/Container/MineraiContainer2" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -20.0
+margin_top = -2.0
+margin_right = 46.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.894118, 0.231373, 0.266667, 1 )
+text = "- XXX"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="MineraiText" type="TextureRect" parent="ResearchContainer/Upgrade Limit/Container/MineraiContainer2" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 42.0
+margin_top = -16.0
+margin_right = 82.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 11 )
+stretch_mode = 4
+
+[node name="TimeContainer" type="Container" parent="ResearchContainer/Upgrade Limit/Container" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 91.0
+margin_top = 162.0
+margin_right = 131.0
+margin_bottom = 202.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Time" type="Label" parent="ResearchContainer/Upgrade Limit/Container/TimeContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -20.0
+margin_top = -2.0
+margin_right = 46.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 10 )
+text = "99:99"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="MineraiText" type="TextureRect" parent="ResearchContainer/Upgrade Limit/Container/TimeContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 42.0
+margin_top = -16.0
+margin_right = 82.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 12 )
+stretch_mode = 4
 
 [node name="Pisa" type="TextureButton" parent="ResearchContainer" index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -264,12 +416,153 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 8 )
-texture_hover = ExtResource( 9 )
+texture_normal = ExtResource( 13 )
+texture_hover = ExtResource( 14 )
+texture_disabled = ExtResource( 15 )
 _sections_unfolded = [ "Textures" ]
+
+[node name="Container2" type="Container" parent="ResearchContainer/Pisa" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -48.0
+margin_top = 29.0
+margin_right = -8.0
+margin_bottom = 69.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="MineraiContainer2" type="Container" parent="ResearchContainer/Pisa/Container2" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 91.0
+margin_top = 127.0
+margin_right = 131.0
+margin_bottom = 167.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="- XXX" type="Label" parent="ResearchContainer/Pisa/Container2/MineraiContainer2" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -20.0
+margin_top = -2.0
+margin_right = 46.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.894118, 0.231373, 0.266667, 1 )
+text = "- XXX"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="MineraiText" type="TextureRect" parent="ResearchContainer/Pisa/Container2/MineraiContainer2" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 42.0
+margin_top = -16.0
+margin_right = 82.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 11 )
+stretch_mode = 4
+
+[node name="TimeContainer" type="Container" parent="ResearchContainer/Pisa/Container2" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 91.0
+margin_top = 162.0
+margin_right = 131.0
+margin_bottom = 202.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Time" type="Label" parent="ResearchContainer/Pisa/Container2/TimeContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -20.0
+margin_top = -2.0
+margin_right = 46.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 10 )
+text = "99:99"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="MineraiText" type="TextureRect" parent="ResearchContainer/Pisa/Container2/TimeContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 42.0
+margin_top = -16.0
+margin_right = 82.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 12 )
+stretch_mode = 4
 
 [node name="Rocket Research" type="TextureButton" parent="ResearchContainer" index="2"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -288,9 +581,150 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 10 )
-texture_hover = ExtResource( 11 )
+texture_normal = ExtResource( 16 )
+texture_hover = ExtResource( 17 )
+texture_disabled = ExtResource( 18 )
 _sections_unfolded = [ "Textures" ]
+
+[node name="Container3" type="Container" parent="ResearchContainer/Rocket Research" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -51.0
+margin_top = 34.0
+margin_right = -11.0
+margin_bottom = 74.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="MineraiContainer2" type="Container" parent="ResearchContainer/Rocket Research/Container3" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 91.0
+margin_top = 159.0
+margin_right = 131.0
+margin_bottom = 199.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="- XXX" type="Label" parent="ResearchContainer/Rocket Research/Container3/MineraiContainer2" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -20.0
+margin_top = -2.0
+margin_right = 46.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.894118, 0.231373, 0.266667, 1 )
+text = "- XXX"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="MineraiText" type="TextureRect" parent="ResearchContainer/Rocket Research/Container3/MineraiContainer2" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 42.0
+margin_top = -16.0
+margin_right = 82.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 11 )
+stretch_mode = 4
+
+[node name="TimeContainer" type="Container" parent="ResearchContainer/Rocket Research/Container3" index="1"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 199.0
+margin_top = 158.0
+margin_right = 239.0
+margin_bottom = 198.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Time" type="Label" parent="ResearchContainer/Rocket Research/Container3/TimeContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -20.0
+margin_top = -2.0
+margin_right = 46.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 10 )
+text = "99:99"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="MineraiText" type="TextureRect" parent="ResearchContainer/Rocket Research/Container3/TimeContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 42.0
+margin_top = -16.0
+margin_right = 82.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 12 )
+stretch_mode = 4
 
 [node name="BatimentsContainrer" type="HBoxContainer" parent="." index="3"]
 
@@ -315,6 +749,7 @@ __meta__ = {
 
 [node name="Mine" type="TextureButton" parent="BatimentsContainrer" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -332,12 +767,155 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 12 )
-texture_hover = ExtResource( 13 )
+texture_normal = ExtResource( 19 )
+texture_hover = ExtResource( 20 )
+texture_disabled = ExtResource( 21 )
 _sections_unfolded = [ "Rect", "Textures", "Theme" ]
+
+[node name="CostContainer" type="Container" parent="BatimentsContainrer/Mine" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -1.0
+margin_top = 3.0
+margin_right = 39.0
+margin_bottom = 43.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="MineraiContainer" type="Container" parent="BatimentsContainrer/Mine/CostContainer" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 150.0
+margin_top = 92.0
+margin_right = 190.0
+margin_bottom = 132.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="- XXX" type="Label" parent="BatimentsContainrer/Mine/CostContainer/MineraiContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -20.0
+margin_top = -2.0
+margin_right = 46.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.894118, 0.231373, 0.266667, 1 )
+text = "- XXX"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="MineraiText" type="TextureRect" parent="BatimentsContainrer/Mine/CostContainer/MineraiContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 42.0
+margin_top = -16.0
+margin_right = 82.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 11 )
+stretch_mode = 4
+
+[node name="EnergieContainer" type="Container" parent="BatimentsContainrer/Mine/CostContainer" index="1"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 150.0
+margin_top = 130.0
+margin_right = 190.0
+margin_bottom = 170.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="- XXX" type="Label" parent="BatimentsContainrer/Mine/CostContainer/EnergieContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -20.0
+margin_top = -2.0
+margin_right = 46.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.894118, 0.231373, 0.266667, 1 )
+text = "- XXX"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="MineraiText" type="TextureRect" parent="BatimentsContainrer/Mine/CostContainer/EnergieContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 42.0
+margin_top = -16.0
+margin_right = 82.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 22 )
+stretch_mode = 4
 
 [node name="Generator" type="TextureButton" parent="BatimentsContainrer" index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -355,12 +933,93 @@ toggle_mode = false
 enabled_focus_mode = 0
 shortcut = null
 group = null
-texture_normal = ExtResource( 14 )
-texture_hover = ExtResource( 15 )
+texture_normal = ExtResource( 23 )
+texture_hover = ExtResource( 24 )
+texture_disabled = ExtResource( 25 )
 _sections_unfolded = [ "Size Flags", "Textures" ]
+
+[node name="CostContainer2" type="Container" parent="BatimentsContainrer/Generator" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -106.0
+margin_top = 19.0
+margin_right = -66.0
+margin_bottom = 59.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="MineraiContainer" type="Container" parent="BatimentsContainrer/Generator/CostContainer2" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 200.0
+margin_top = 104.0
+margin_right = 240.0
+margin_bottom = 144.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="- XXX" type="Label" parent="BatimentsContainrer/Generator/CostContainer2/MineraiContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -20.0
+margin_top = -2.0
+margin_right = 46.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.894118, 0.231373, 0.266667, 1 )
+text = "- XXX"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="MineraiText" type="TextureRect" parent="BatimentsContainrer/Generator/CostContainer2/MineraiContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 42.0
+margin_top = -16.0
+margin_right = 82.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 11 )
+stretch_mode = 4
 
 [node name="Warehouse" type="TextureButton" parent="BatimentsContainrer" index="2"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -379,12 +1038,153 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 16 )
-texture_hover = ExtResource( 17 )
+texture_normal = ExtResource( 26 )
+texture_hover = ExtResource( 27 )
+texture_disabled = ExtResource( 21 )
 _sections_unfolded = [ "Rect", "Size Flags", "Textures" ]
+
+[node name="CostContainer2" type="Container" parent="BatimentsContainrer/Warehouse" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -1.0
+margin_top = 3.0
+margin_right = 39.0
+margin_bottom = 43.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="MineraiContainer" type="Container" parent="BatimentsContainrer/Warehouse/CostContainer2" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 150.0
+margin_top = 92.0
+margin_right = 190.0
+margin_bottom = 132.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="- XXX" type="Label" parent="BatimentsContainrer/Warehouse/CostContainer2/MineraiContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -20.0
+margin_top = -2.0
+margin_right = 46.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.894118, 0.231373, 0.266667, 1 )
+text = "- XXX"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="MineraiText" type="TextureRect" parent="BatimentsContainrer/Warehouse/CostContainer2/MineraiContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 42.0
+margin_top = -16.0
+margin_right = 82.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 11 )
+stretch_mode = 4
+
+[node name="EnergieContainer" type="Container" parent="BatimentsContainrer/Warehouse/CostContainer2" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 150.0
+margin_top = 130.0
+margin_right = 190.0
+margin_bottom = 170.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="- XXX" type="Label" parent="BatimentsContainrer/Warehouse/CostContainer2/EnergieContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -20.0
+margin_top = -2.0
+margin_right = 46.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.894118, 0.231373, 0.266667, 1 )
+text = "- XXX"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="MineraiText" type="TextureRect" parent="BatimentsContainrer/Warehouse/CostContainer2/EnergieContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 42.0
+margin_top = -16.0
+margin_right = 82.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 22 )
+stretch_mode = 4
 
 [node name="Laboratory" type="TextureButton" parent="BatimentsContainrer" index="3"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -403,12 +1203,154 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = SubResource( 2 )
 group = null
-texture_normal = ExtResource( 18 )
-texture_hover = ExtResource( 19 )
+texture_normal = ExtResource( 28 )
+texture_hover = ExtResource( 29 )
+texture_disabled = ExtResource( 30 )
 _sections_unfolded = [ "Size Flags", "Textures" ]
+
+[node name="CostContainer3" type="Container" parent="BatimentsContainrer/Laboratory" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -2.0
+margin_top = 3.0
+margin_right = 38.0
+margin_bottom = 43.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="MineraiContainer" type="Container" parent="BatimentsContainrer/Laboratory/CostContainer3" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 150.0
+margin_top = 92.0
+margin_right = 190.0
+margin_bottom = 132.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="- XXX" type="Label" parent="BatimentsContainrer/Laboratory/CostContainer3/MineraiContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -20.0
+margin_top = -2.0
+margin_right = 46.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.894118, 0.231373, 0.266667, 1 )
+text = "- XXX"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="MineraiText" type="TextureRect" parent="BatimentsContainrer/Laboratory/CostContainer3/MineraiContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 42.0
+margin_top = -16.0
+margin_right = 82.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 11 )
+stretch_mode = 4
+
+[node name="EnergieContainer" type="Container" parent="BatimentsContainrer/Laboratory/CostContainer3" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 150.0
+margin_top = 130.0
+margin_right = 190.0
+margin_bottom = 170.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="- XXX" type="Label" parent="BatimentsContainrer/Laboratory/CostContainer3/EnergieContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -20.0
+margin_top = -2.0
+margin_right = 46.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.894118, 0.231373, 0.266667, 1 )
+text = "- XXX"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="MineraiText" type="TextureRect" parent="BatimentsContainrer/Laboratory/CostContainer3/EnergieContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 42.0
+margin_top = -16.0
+margin_right = 82.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 22 )
+stretch_mode = 4
 
 [node name="Wall" type="TextureButton" parent="BatimentsContainrer" index="4"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -427,12 +1369,155 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 20 )
-texture_hover = ExtResource( 21 )
+texture_normal = ExtResource( 31 )
+texture_hover = ExtResource( 32 )
+texture_disabled = ExtResource( 33 )
 _sections_unfolded = [ "Size Flags", "Textures" ]
+
+[node name="CostContainer4" type="Container" parent="BatimentsContainrer/Wall" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -3.0
+margin_top = 3.0
+margin_right = 37.0
+margin_bottom = 43.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="MineraiContainer" type="Container" parent="BatimentsContainrer/Wall/CostContainer4" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 150.0
+margin_top = 92.0
+margin_right = 190.0
+margin_bottom = 132.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="- XXX" type="Label" parent="BatimentsContainrer/Wall/CostContainer4/MineraiContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -20.0
+margin_top = -2.0
+margin_right = 46.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.894118, 0.231373, 0.266667, 1 )
+text = "- XXX"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="MineraiText" type="TextureRect" parent="BatimentsContainrer/Wall/CostContainer4/MineraiContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 42.0
+margin_top = -16.0
+margin_right = 82.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 11 )
+stretch_mode = 4
+
+[node name="EnergieContainer" type="Container" parent="BatimentsContainrer/Wall/CostContainer4" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 150.0
+margin_top = 130.0
+margin_right = 190.0
+margin_bottom = 170.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="- XXX" type="Label" parent="BatimentsContainrer/Wall/CostContainer4/EnergieContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -20.0
+margin_top = -2.0
+margin_right = 46.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.894118, 0.231373, 0.266667, 1 )
+text = "- XXX"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="MineraiText" type="TextureRect" parent="BatimentsContainrer/Wall/CostContainer4/EnergieContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 42.0
+margin_top = -16.0
+margin_right = 82.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 22 )
+stretch_mode = 4
 
 [node name="Turret" type="TextureButton" parent="BatimentsContainrer" index="5"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -451,12 +1536,154 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 22 )
-texture_hover = ExtResource( 23 )
+texture_normal = ExtResource( 34 )
+texture_hover = ExtResource( 35 )
+texture_disabled = ExtResource( 36 )
 _sections_unfolded = [ "Rect", "Size Flags", "Textures" ]
+
+[node name="CostContainer5" type="Container" parent="BatimentsContainrer/Turret" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -3.0
+margin_top = 3.0
+margin_right = 37.0
+margin_bottom = 43.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="MineraiContainer" type="Container" parent="BatimentsContainrer/Turret/CostContainer5" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 150.0
+margin_top = 92.0
+margin_right = 190.0
+margin_bottom = 132.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="- XXX" type="Label" parent="BatimentsContainrer/Turret/CostContainer5/MineraiContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -20.0
+margin_top = -2.0
+margin_right = 46.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.894118, 0.231373, 0.266667, 1 )
+text = "- XXX"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="MineraiText" type="TextureRect" parent="BatimentsContainrer/Turret/CostContainer5/MineraiContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 42.0
+margin_top = -16.0
+margin_right = 82.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 11 )
+stretch_mode = 4
+
+[node name="EnergieContainer" type="Container" parent="BatimentsContainrer/Turret/CostContainer5" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 150.0
+margin_top = 130.0
+margin_right = 190.0
+margin_bottom = 170.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="- XXX" type="Label" parent="BatimentsContainrer/Turret/CostContainer5/EnergieContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -20.0
+margin_top = -2.0
+margin_right = 46.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.894118, 0.231373, 0.266667, 1 )
+text = "- XXX"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="MineraiText" type="TextureRect" parent="BatimentsContainrer/Turret/CostContainer5/EnergieContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 42.0
+margin_top = -16.0
+margin_right = 82.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 22 )
+stretch_mode = 4
 
 [node name="Rocket" type="TextureButton" parent="BatimentsContainrer" index="6"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -475,9 +1702,150 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 24 )
-texture_hover = ExtResource( 25 )
+texture_normal = ExtResource( 37 )
+texture_hover = ExtResource( 38 )
+texture_disabled = ExtResource( 39 )
 _sections_unfolded = [ "Rect", "Size Flags", "Textures" ]
+
+[node name="CostContainer6" type="Container" parent="BatimentsContainrer/Rocket" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -7.0
+margin_top = 3.0
+margin_right = 33.0
+margin_bottom = 43.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="MineraiContainer" type="Container" parent="BatimentsContainrer/Rocket/CostContainer6" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 150.0
+margin_top = 92.0
+margin_right = 190.0
+margin_bottom = 132.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="- XXX" type="Label" parent="BatimentsContainrer/Rocket/CostContainer6/MineraiContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -20.0
+margin_top = -2.0
+margin_right = 46.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.894118, 0.231373, 0.266667, 1 )
+text = "- XXX"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="MineraiText" type="TextureRect" parent="BatimentsContainrer/Rocket/CostContainer6/MineraiContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 42.0
+margin_top = -16.0
+margin_right = 82.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 11 )
+stretch_mode = 4
+
+[node name="EnergieContainer" type="Container" parent="BatimentsContainrer/Rocket/CostContainer6" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 150.0
+margin_top = 130.0
+margin_right = 190.0
+margin_bottom = 170.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="- XXX" type="Label" parent="BatimentsContainrer/Rocket/CostContainer6/EnergieContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -20.0
+margin_top = -2.0
+margin_right = 46.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.894118, 0.231373, 0.266667, 1 )
+text = "- XXX"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="MineraiText" type="TextureRect" parent="BatimentsContainrer/Rocket/CostContainer6/EnergieContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 42.0
+margin_top = -16.0
+margin_right = 82.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 22 )
+stretch_mode = 4
 
 [node name="TextureRect" type="TextureRect" parent="BatimentsContainrer" index="7"]
 
@@ -495,7 +1863,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 26 )
+texture = ExtResource( 40 )
 stretch_mode = 0
 
 [node name="RessourcesContainer" type="VBoxContainer" parent="BatimentsContainrer/TextureRect" index="0"]
@@ -616,7 +1984,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 3
-texture = ExtResource( 28 )
+texture = ExtResource( 11 )
 stretch_mode = 4
 _sections_unfolded = [ "Size Flags", "Theme" ]
 
@@ -718,7 +2086,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 29 )
+texture = ExtResource( 22 )
 stretch_mode = 0
 
 [node name="Research Speed" type="Label" parent="BatimentsContainrer/TextureRect/RessourcesContainer" index="4"]
@@ -818,7 +2186,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 30 )
+texture = ExtResource( 42 )
 stretch_mode = 0
 
 [node name="Production Speed" type="Label" parent="BatimentsContainrer/TextureRect/RessourcesContainer" index="6"]
@@ -918,7 +2286,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 31 )
+texture = ExtResource( 43 )
 stretch_mode = 0
 
 [node name="TimerContainer" type="CenterContainer" parent="." index="4"]
@@ -944,9 +2312,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 750.0
+margin_left = 877.0
 margin_top = 23.0
-margin_right = 1170.0
+margin_right = 1043.0
 margin_bottom = 67.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -962,7 +2330,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 420.0
+margin_right = 166.0
 margin_bottom = 20.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -971,7 +2339,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 3 )
-text = "Remaining time until world corruption"
+text = "Remaining time"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -985,7 +2353,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 24.0
-margin_right = 420.0
+margin_right = 166.0
 margin_bottom = 44.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -999,15 +2367,7 @@ align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = ExtResource( 32 )
 _sections_unfolded = [ "custom_fonts" ]
-
-[node name="Timer" type="Timer" parent="TimerContainer/VBoxContainer/Time" index="0"]
-
-process_mode = 1
-wait_time = 1.0
-one_shot = false
-autostart = false
 
 [node name="GlobalTimer" type="Timer" parent="." index="5"]
 
@@ -1038,8 +2398,6 @@ autostart = false
 [connection signal="pressed" from="BatimentsContainrer/Warehouse" to="." method="_on_Warehouse_pressed"]
 
 [connection signal="pressed" from="BatimentsContainrer/Laboratory" to="." method="_on_Laboratory_pressed"]
-
-[connection signal="timeout" from="TimerContainer/VBoxContainer/Time/Timer" to="TimerContainer/VBoxContainer/Time" method="_on_Timer_timeout"]
 
 [connection signal="timeout" from="GlobalTimer" to="." method="on_research_over"]
 
