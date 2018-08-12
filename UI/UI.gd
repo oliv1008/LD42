@@ -11,3 +11,10 @@ func _on_Warehouse_pressed():
 
 func _on_Generator_pressed():
 	Global.initScene(Global.generateurScene)
+
+
+func _on_ResearchButton_pressed():
+	if $ResearchContainer.visible == false:
+		$ResearchContainer.visible = true
+	else:
+		$ResearchContainer.visible = false
