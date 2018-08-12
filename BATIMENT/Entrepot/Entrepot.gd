@@ -1,10 +1,12 @@
-extends "Batiment.gd"
+extends "../Batiment.gd"
 
 func _ready():
 	pos = Vector2(0, 0)
 	size = Vector2(3, 3)
 	state = 0
-	type = types.ENTREPOT
+	type = Global.ENTREPOT
+	health = 90
+	maxHealth = 90
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	pass

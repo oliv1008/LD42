@@ -12,6 +12,14 @@ func _on_Warehouse_pressed():
 func _on_Generator_pressed():
 	Global.initScene(Global.generateurScene)
 
+func _on_Wall_pressed():
+	Global.initScene(Global.murScene)
+
+func _on_Turret_pressed():
+	Global.initScene(Global.turretScene)
+
+func _on_Rocket_pressed():
+	Global.initScene(Global.rocketScene)
 
 func _on_ResearchButton_pressed():
 	if $ResearchContainer.visible == false:
