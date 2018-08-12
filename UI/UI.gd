@@ -20,3 +20,9 @@ func _on_Turret_pressed():
 
 func _on_Rocket_pressed():
 	Global.initScene(Global.rocketScene)
+
+func _on_ResearchButton_pressed():
+	if $ResearchContainer.visible == false:
+		$ResearchContainer.visible = true
+	else:
+		$ResearchContainer.visible = false

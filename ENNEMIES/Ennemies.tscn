@@ -1,37 +1,29 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://ENNEMIES/Ennemies.gd" type="Script" id=1]
-[ext_resource path="res://BATIMENT/Disparition Sprite.anim" type="Animation" id=2]
-[ext_resource path="res://ENNEMIES/Disparition Sprite Ennemies.anim" type="Animation" id=3]
+[ext_resource path="res://Assets/Pixel Art/Monstre/Run anim.png" type="Texture" id=2]
+[ext_resource path="res://BATIMENT/Disparition Sprite.anim" type="Animation" id=3]
+[ext_resource path="res://ENNEMIES/Disparition Sprite Ennemies.anim" type="Animation" id=4]
+[ext_resource path="res://ENNEMIES/Walk.anim" type="Animation" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 8, 8 )
+extents = Vector2( 40, 24 )
 
-[node name="Ennemies" type="Node2D"]
+[node name="Ennemies" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Pause" ]
 
-[node name="Sprite" type="ColorRect" parent="." index="0"]
+[node name="Sprite" type="Sprite" parent="." index="0"]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -8.0
-margin_top = -8.0
-margin_right = 8.0
-margin_bottom = 8.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-color = Color( 1, 0, 0, 1 )
-_sections_unfolded = [ "Visibility" ]
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 2 )
+hframes = 8
+frame = 2
+_sections_unfolded = [ "Animation" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
 
@@ -40,19 +32,25 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-"anims/Disparition Sprite" = ExtResource( 2 )
-"anims/Disparition Sprite Ennemies" = ExtResource( 3 )
+"anims/Disparition Sprite" = ExtResource( 3 )
+"anims/Disparition Sprite Ennemies" = ExtResource( 4 )
+anims/Walk = ExtResource( 5 )
 blend_times = [  ]
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="." index="2"]
 
 input_pickable = false
-collision_layer = 1
-collision_mask = 1
+collision_layer = 25
+collision_mask = 25
 collision/safe_margin = 0.08
+_sections_unfolded = [ "Collision", "collision" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D" index="0"]
 
+position = Vector2( 0, 16 )
 shape = SubResource( 1 )
 
 [node name="Cooldown" type="Timer" parent="." index="3"]
@@ -60,7 +58,9 @@ shape = SubResource( 1 )
 process_mode = 1
 wait_time = 1.0
 one_shot = false
-autostart = false
+autostart = true
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 
 [connection signal="timeout" from="Cooldown" to="." method="_on_Cooldown_timeout"]
 
