@@ -61,6 +61,20 @@ func build():
 	
 	$AudioStreamPlayer.pitch_scale = pitch_scales[boostLevel - 1]
 	$AudioStreamPlayer.play()
+	if type == Global.LABORATOIRE:
+		Global.initScene(Global.labScene)
+	elif type == Global.MINE:
+		Global.initScene(Global.mineScene)
+	elif type == Global.ENTREPOT:
+		Global.initScene(Global.entrepotScene)
+	elif type == Global.GENERATEUR:
+		Global.initScene(Global.generateurScene)
+	elif type == Global.MUR:
+		Global.initScene(Global.murScene)
+	elif type == Global.TURRET:
+		Global.initScene(Global.turretScene)
+	elif type == Global.ROCKET:
+		Global.initScene(Global.rocketScene)
 	specific_build()
 
 func compute_boost():

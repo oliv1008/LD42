@@ -5,8 +5,8 @@ func _ready():
 	size = Vector2(1, 2)
 	state = 0
 	type = Global.MUR
-	health = 300
-	maxHealth = 200
+	health = 600
+	maxHealth = 600
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	pass

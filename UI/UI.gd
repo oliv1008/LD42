@@ -7,7 +7,7 @@ var TextureResearchIcon = { "Sky_is" : preload("res://Assets/Pixel Art/Icones/ic
 
 var Ski_is_research_cost = [50, 100, 200, 500, 1000, 2000, 5000, 10000, 20000, 500000]
 var Ski_is_research_time = [10, 20, 30, 40, 50, 60, 120, 240, 480, 960]
-var Sky_is_research_bonus = [2, 2, 3, 3, 4, 5, 5, 6, 15, 25]
+var Sky_is_research_bonus = [2, 2, 3, 3, 4, 5, 5, 6, 12, 18]
 var Ski_is_level = 0
 const MAX_SKY_LEVEL = 9
 
@@ -44,6 +44,7 @@ func _ready():
 	$"BatimentsContainrer/Generator/CostContainer2/MineraiContainer/- XXX".text = str("- ", Global.COST_GENERATEUR)
 	$"BatimentsContainrer/Laboratory/CostContainer3/EnergieContainer/- XXX".text = str("- ", Global.ENERGY_LAB)
 	$"BatimentsContainrer/Laboratory/CostContainer3/MineraiContainer/- XXX".text = str("- ", Global.COST_LAB)
+
 #-------INITIALISATION DU TIMER POUR "Remaining Time"------------------------------
 
 	var total_game_time = Global.GRID_LENGHT/2
@@ -128,7 +129,7 @@ func _process(delta):
 		else:
 			var total_time = Pisa_research_time[Pisa_level] / Global.researchSpeed
 			total_time = Global.secToTime(total_time)
-			$ResearchContainer/Pisa/Container2/TimeContainer/Time.text = total_time
+			$"ResearchContainer/Pisa/Container2/TimeContainer/Time".text = total_time
 			$"ResearchContainer/Pisa/Container2/MineraiContainer2/- XXX".text = format_text_2(Pisa_research_cost[Pisa_level])
 			if ressources < Pisa_research_cost[Pisa_level]:
 				$ResearchContainer/Pisa.disabled = true
