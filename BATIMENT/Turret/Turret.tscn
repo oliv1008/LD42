@@ -50,7 +50,7 @@ tracks/0/keys = {
 [sub_resource type="CircleShape2D" id=3]
 
 custom_solver_bias = 0.0
-radius = 496.0
+radius = 752.17
 
 [sub_resource type="RectangleShape2D" id=4]
 
@@ -117,6 +117,8 @@ __meta__ = {
 
 [node name="Line2D" type="Line2D" parent="." index="4"]
 
+position = Vector2( -3.05176e-005, -7.99999 )
+scale = Vector2( 1.55372, 1.50413 )
 points = PoolVector2Array( 480, 0, 464, -128, 416, -240, 336, -336, 240, -416, 128, -464, 0, -480, -128, -464, -240, -416, -336, -336, -416, -240, -464, -128, -480, 0, -464, 128, -416, 240, -336, 336, -240, 416, -128, 464, 0, 480, 128, 464, 240, 416, 336, 336, 416, 240, 464, 112, 480, 0 )
 width = 4.0
 default_color = Color( 0.180344, 0.871094, 0.417789, 0.348078 )
