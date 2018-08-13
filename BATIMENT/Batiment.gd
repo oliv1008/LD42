@@ -127,6 +127,7 @@ func smartRemove(outOfEnergy = false):
 			Global.Grid[x][y] = null
 	handleSuperiorBuildings()
 	$AnimationPlayer.play("Disparition Sprite")
+	$AudioDestruction.play()
 	$KinematicBody2D.queue_free()
 
 func endOfAnimation():

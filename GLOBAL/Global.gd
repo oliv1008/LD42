@@ -40,6 +40,17 @@ const ENERGY_ROCKET = 0
 
 var corruptionLevel = 0
 
+func secToTime(sec):
+	var seconds = int(sec) % 60
+	var minutes = int(sec) / 60
+	var strSeconds = str(seconds)
+	if seconds < 10:
+		strSeconds = strSeconds.insert(0, "0")
+	var strMinutes = str(minutes)
+	if minutes < 10:
+		strMinutes = strMinutes.insert(0, "0")
+	return str(strMinutes," : ",strSeconds)
+
 func _ready():
 	init_grid()
 

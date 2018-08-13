@@ -34,7 +34,7 @@ key = false
 drag = true
 edge = false
 wheel = true
-zoom_out_limit = 3
+zoom_out_limit = 5
 camera_speed = 450
 camera_margin = 50
 

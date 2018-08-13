@@ -65,6 +65,9 @@ func _ready():
 	set_enable_follow_smoothing(true)
 	set_follow_smoothing(9)
 	set_process_unhandled_input(true)
+	position = Vector2(3200, -200)
+	camera_zoom = Vector2(4.0, 4.0)
+	set_zoom(camera_zoom)
 
 func _physics_process(delta):
 
@@ -96,8 +99,8 @@ func _physics_process(delta):
 	
 	# Update position of the camera.
 	position += camera_movement * get_zoom()
-	position.x = clamp(position.x, 0, 100000)
-	position.y = clamp(position.y, -100000, -32 * 2 * get_zoom().y * get_zoom().y)
+	position.x = clamp(position.x, get_viewport_rect().size.x / 2, 6400 - get_viewport_rect().size.x / 2)
+	position.y = clamp(position.y, -6400 + get_viewport_rect().size.y + 64*20, 10 -(camera_zoom.y * 2 -1)*100)
 	
 	# Set camera movement to zero, update old mouse position.
 	camera_movement = Vector2(0,0)
@@ -118,6 +121,7 @@ func _input(event):
 		camera_zoom.y - camera_zoom_speed.y > 0:
 			camera_zoom -= camera_zoom_speed
 			set_zoom(camera_zoom)
+			position.y += 100 * camera_zoom.y
 		# Checking if future zoom won't be above zoom_out_limit.
 		if event.is_action_pressed("WheelDown") and\
 		camera_zoom.x + camera_zoom_speed.x < zoom_out_limit and\
