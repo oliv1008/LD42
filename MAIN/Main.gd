@@ -26,8 +26,8 @@ func format_text_2(a):
 	return str(strA)
 var oldHauteurMaxDeConstruction
 func _ready():
-	$Line2D.set_point_position(0, Vector2(-3000, -64 * Global.hauteurMaxDeConstruction))
-	$Line2D.set_point_position(1, Vector2(64*100 + 3000, -64 * Global.hauteurMaxDeConstruction))
+	$Line2D.set_point_position(0, Vector2(-8000, -64 * Global.hauteurMaxDeConstruction))
+	$Line2D.set_point_position(1, Vector2(64*100 + 8000, -64 * Global.hauteurMaxDeConstruction))
 	oldHauteurMaxDeConstruction = Global.hauteurMaxDeConstruction
 func _process(delta):
 	if oldHauteurMaxDeConstruction != Global.hauteurMaxDeConstruction:
@@ -35,5 +35,5 @@ func _process(delta):
 		oldHauteurMaxDeConstruction = Global.hauteurMaxDeConstruction
 
 func updateLine():
-	$Line2D.set_point_position(0, Vector2(-3000, -Global.CELL_SIZE * Global.hauteurMaxDeConstruction))
-	$Line2D.set_point_position(1, Vector2(3000 + Global.CELL_SIZE * Global.GRID_LENGHT, -Global.CELL_SIZE * Global.hauteurMaxDeConstruction))
+	$Line2D.set_point_position(0, Vector2(-8000, -Global.CELL_SIZE * Global.hauteurMaxDeConstruction))
+	$Line2D.set_point_position(1, Vector2(8000 + Global.CELL_SIZE * Global.GRID_LENGHT, -Global.CELL_SIZE * Global.hauteurMaxDeConstruction))

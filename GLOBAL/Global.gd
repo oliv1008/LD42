@@ -54,6 +54,7 @@ func secToTime(sec):
 
 func _ready():
 	init_grid()
+	randomize()
 
 func init_grid():
 	for x in range(0,GRID_LENGHT):
