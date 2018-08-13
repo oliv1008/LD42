@@ -38,7 +38,7 @@ func _ready():
 	$"BatimentsContainrer/Rocket/CostContainer6/EnergieContainer/- XXX".text = str("- ", Global.ENERGY_ROCKET)
 	$"BatimentsContainrer/Turret/CostContainer5/MineraiContainer/- XXX".text = str("- ", format_text_2(Global.COST_TURRET))
 	$"BatimentsContainrer/Turret/CostContainer5/EnergieContainer/- XXX".text = str("- ", Global.ENERGY_TURRET)
-	$"BatimentsContainrer/Rocket/CostContainer6/MineraiContainer/- XXX".text = str("- ", Global.COST_ROCKET)
+	$"BatimentsContainrer/Rocket/CostContainer6/MineraiContainer/- XXX".text = str("- ", format_text_2(Global.COST_ROCKET))
 	$"BatimentsContainrer/Warehouse/CostContainer2/MineraiContainer/- XXX".text = str("- ", Global.COST_ENTREPOT)
 	$"BatimentsContainrer/Warehouse/CostContainer2/EnergieContainer/- XXX".text = str("- ", Global.ENERGY_ENTREPOT)
 	$"BatimentsContainrer/Generator/CostContainer2/MineraiContainer/- XXX".text = str("- ", Global.COST_GENERATEUR)
