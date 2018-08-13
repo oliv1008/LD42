@@ -70,7 +70,6 @@ tile_data = PoolIntArray( 19, 2, 0, 20, 1, 0, 21, 0, 0, 22, 1, 0, 23, 2, 0, 24, 
 
 [node name="Line2D" type="Line2D" parent="." index="3"]
 
-visible = false
 points = PoolVector2Array( 0, -70, 6400, -70 )
 width = 5.0
 default_color = Color( 0.078949, 0.449971, 0.777344, 0.657451 )
@@ -81,7 +80,6 @@ _sections_unfolded = [ "Border", "Capping", "Fill", "Transform", "Z Index" ]
 
 [node name="Center" type="Line2D" parent="." index="4"]
 
-visible = false
 points = PoolVector2Array( 3200, -6400, 3200, 2000 )
 width = 5.0
 default_color = Color( 0.109048, 0.773438, 0.087616, 0.657451 )
@@ -225,8 +223,6 @@ _sections_unfolded = [ "Visibility", "custom_colors", "custom_constants", "custo
 
 [node name="Ennemies" type="Node2D" parent="." index="6"]
 
-editor/display_folded = true
-
 [node name="Ennemies" parent="Ennemies" index="0" instance=ExtResource( 7 )]
 
 position = Vector2( 6456, -40 )
@@ -240,8 +236,6 @@ scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="UI" parent="CanvasLayer" index="0" instance=ExtResource( 8 )]
-
-visible = false
 
 [node name="AudioPesant" type="AudioStreamPlayer" parent="." index="8"]
 

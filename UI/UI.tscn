@@ -282,6 +282,7 @@ size_flags_vertical = 1
 
 [node name="MineraiContainer2" type="Container" parent="ResearchContainer/Upgrade Limit/Container" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -375,7 +376,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 10 )
-text = "99:99"
+text = "99 : 99"
 align = 2
 percent_visible = 1.0
 lines_skipped = 0
@@ -388,10 +389,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 42.0
-margin_top = -16.0
-margin_right = 82.0
-margin_bottom = 24.0
+margin_left = 56.0
+margin_top = -17.0
+margin_right = 96.0
+margin_bottom = 23.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -447,6 +448,7 @@ size_flags_vertical = 1
 
 [node name="MineraiContainer2" type="Container" parent="ResearchContainer/Pisa/Container2" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -540,7 +542,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 10 )
-text = "99:99"
+text = "99 : 99"
 align = 2
 percent_visible = 1.0
 lines_skipped = 0
@@ -553,10 +555,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 42.0
-margin_top = -16.0
-margin_right = 82.0
-margin_bottom = 24.0
+margin_left = 59.0
+margin_top = -15.0
+margin_right = 99.0
+margin_bottom = 25.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -598,10 +600,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -51.0
-margin_top = 34.0
-margin_right = -11.0
-margin_bottom = 74.0
+margin_left = -58.0
+margin_top = 33.0
+margin_right = -18.0
+margin_bottom = 73.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -673,7 +675,6 @@ stretch_mode = 4
 
 [node name="TimeContainer" type="Container" parent="ResearchContainer/Rocket Research/Container3" index="1"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -706,7 +707,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 10 )
-text = "99:99"
+text = "99 : 99"
 align = 2
 percent_visible = 1.0
 lines_skipped = 0
@@ -719,9 +720,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 42.0
+margin_left = 54.0
 margin_top = -16.0
-margin_right = 82.0
+margin_right = 94.0
 margin_bottom = 24.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -750,9 +751,6 @@ size_flags_vertical = 1
 custom_constants/separation = 0
 alignment = 0
 _sections_unfolded = [ "custom_constants" ]
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Mine" type="TextureButton" parent="BatimentsContainrer" index="0"]
 
@@ -2297,6 +2295,7 @@ stretch_mode = 0
 
 [node name="TimerContainer" type="CenterContainer" parent="." index="4"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -2456,6 +2455,13 @@ wait_time = 1.0
 one_shot = false
 autostart = false
 
+[node name="RemainingTimer" type="Timer" parent="." index="8"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
 [connection signal="pressed" from="ResearchAndLoadingContainer/ResearchButton" to="." method="_on_ResearchButton_pressed"]
 
 [connection signal="pressed" from="ResearchContainer/Upgrade Limit" to="." method="_on_Upgrade_Limit_pressed"]
@@ -2479,5 +2485,7 @@ autostart = false
 [connection signal="timeout" from="GlobalTimer" to="." method="on_research_over"]
 
 [connection signal="timeout" from="SecondTimer" to="." method="update_loading_bar"]
+
+[connection signal="timeout" from="RemainingTimer" to="." method="_on_RemainingTimer_timeout"]
 
 

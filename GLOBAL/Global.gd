@@ -14,8 +14,8 @@ var researchSpeed = 1
 
 var isLabBuilt = false
 var isRocketResearched = false
-var hauteurMaxDeConstruction = 1
-var maxTourDePise = 0
+var hauteurMaxDeConstruction = 10
+var maxTourDePise = 3
 
 const GRID_LENGHT = 100
 const GRID_HEIGH = 100
@@ -35,6 +35,7 @@ const ENERGY_ENTREPOT = 25
 const ENERGY_GENERATEUR = 0
 const ENERGY_MUR = 0
 const ENERGY_TURRET = 25
+
 const ENERGY_ROCKET = 0
 
 var corruptionLevel = 0
@@ -107,8 +108,14 @@ var entrepotSceneSprites = [\
 		preload("res://Assets/Pixel Art/Batiments/Warehouse/Warehouse-lvl3.png"),\
 		preload("res://Assets/Pixel Art/Batiments/Warehouse/Warehouse-lvl4.png"),\
 		preload("res://Assets/Pixel Art/Batiments/Warehouse/Warehouse-lvl5.png"),]
+		
+var murSceneSprites = [\
+		preload("res://Assets/Pixel Art/Batiments/Mur.png"),\
+		preload("res://Assets/Pixel Art/Batiments/Mur.png"),\
+		preload("res://Assets/Pixel Art/Batiments/Mur.png"),\
+		preload("res://Assets/Pixel Art/Batiments/Mur.png"),\
+		preload("res://Assets/Pixel Art/Batiments/Mur.png")]
 
-var murSceneSprites = [preload("res://Assets/Pixel Art/Batiments/Mur.png")]
 var rocketSceneSprites = [preload("res://Assets/Pixel Art/Batiments/Rocket.png")]
 
 enum types {LABORATOIRE, MINE, ENTREPOT, GENERATEUR, MUR, TURRET, ROCKET}
@@ -127,8 +134,10 @@ func _process(delta):
 func turnOffBuildings():
 	var i = 0
 	while energyconsummed > energy and i < Batiments.size():
-		Batiments[i].turnOff()
-		BatimentsOff.append(Batiments[i])
+		if Batiments[i].type != GENERATEUR:
+			Batiments[i].turnOff()
+			BatimentsOff.append(Batiments[i])
+			Batiments.remove(i)
 		i += 1
 
 func turnOnBuildings():
@@ -136,6 +145,7 @@ func turnOnBuildings():
 	for building in BatimentsOff:
 		if building.Energies[building.type] < delta:
 			building.turnOn()
+			Batiments.append(building)
 			BatimentsOff.remove(BatimentsOff.find(building))
 
 func _input(event):
@@ -155,7 +165,7 @@ func _input(event):
 		initScene(rocketScene)
 
 func initScene(scene):
-	if ressources >= Prices[scene] && energy - energyconsummed >= Energies[scene] :
+	if ressources >= Prices[scene] && (energy - energyconsummed >= Energies[scene] or Energies[scene] <= 0) :
 		if currentNode != null:
 			currentNode.queue_free()
 		var node = scene.instance()

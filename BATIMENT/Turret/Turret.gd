@@ -31,6 +31,7 @@ func attack():
 	if ennemies.size() != 0:
 		if ennemies[0].get_node("KinematicBody2D") != null:
 			ennemies[0].get_node("KinematicBody2D").queue_free()
+			ennemies[0].set_physics_process(false)
 			drawLaser(ennemies[0])
 		ennemies.remove(0)
 
