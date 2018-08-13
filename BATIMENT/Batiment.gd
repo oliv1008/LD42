@@ -1,5 +1,7 @@
 extends Node2D
 
+var popup = preload("res://POPUP/Popup.tscn")
+
 var state = 0
 #size = Longueur * hauteur
 var size = Vector2(0, 0)

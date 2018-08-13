@@ -15,3 +15,6 @@ var boostScale = [10, 15, 20, 25, 50]
 func specific_build():
 	ressourcesProduction = boostScale[boostLevel - 1]
 	Global.production += ressourcesProduction
+	var new_popup = popup.instance()
+	new_popup.initialize("Mine", ressourcesProduction)
+	add_child(new_popup)

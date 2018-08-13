@@ -77,7 +77,7 @@ use_filter = false
 font_data = ExtResource( 42 )
 _sections_unfolded = [ "Font" ]
 
-[node name="UI" type="Control" index="0"]
+[node name="UI" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1681,6 +1681,7 @@ stretch_mode = 4
 
 [node name="Rocket" type="TextureButton" parent="BatimentsContainrer" index="6"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -1845,6 +1846,7 @@ stretch_mode = 4
 
 [node name="TextureRect" type="TextureRect" parent="BatimentsContainrer" index="7"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -2467,6 +2469,12 @@ autostart = false
 [connection signal="pressed" from="BatimentsContainrer/Warehouse" to="." method="_on_Warehouse_pressed"]
 
 [connection signal="pressed" from="BatimentsContainrer/Laboratory" to="." method="_on_Laboratory_pressed"]
+
+[connection signal="pressed" from="BatimentsContainrer/Wall" to="." method="_on_Wall_pressed"]
+
+[connection signal="pressed" from="BatimentsContainrer/Turret" to="." method="_on_Turret_pressed"]
+
+[connection signal="pressed" from="BatimentsContainrer/Rocket" to="." method="_on_Rocket_pressed"]
 
 [connection signal="pressed" from="UIButtonContainer/Restart" to="." method="_on_Restart_pressed"]
 

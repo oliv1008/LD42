@@ -15,3 +15,6 @@ var boostScale = [100, 200, 500, 1000, 5000]
 func specific_build():
 	stock = boostScale[boostLevel - 1]
 	Global.stock += stock
+	var new_popup = popup.instance()
+	new_popup.initialize("Entrepot", stock)
+	add_child(new_popup)

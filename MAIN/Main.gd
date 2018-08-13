@@ -12,8 +12,8 @@ func _on_Timer_timeout():
 	$CanvasLayer/UI/BatimentsContainrer/TextureRect/RessourcesContainer/ProductionContainer4/Container/Text.text = str(Global.production, " /s")
 
 func format_text(a,b):
-	var strA
-	var strB
+	var strA = str(a)
+	var strB = str(b)
 	if a >= 10000:
 		strA = str(a/1000, "K")
 	if b >= 10000:

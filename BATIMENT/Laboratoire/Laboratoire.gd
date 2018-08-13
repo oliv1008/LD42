@@ -14,3 +14,6 @@ func specific_build():
 	researchSpeed = boostScale[boostLevel - 1]
 	Global.researchSpeed += researchSpeed
 	Global.isLabBuilt = true
+	var new_popup = popup.instance()
+	new_popup.initialize("Labo", researchSpeed)
+	add_child(new_popup)
