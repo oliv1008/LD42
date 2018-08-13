@@ -59,9 +59,9 @@ func CorruptionProgress():
 		$CorruptionProgress.wait_time = corruption_speeds[1]
 	if corruptionLevel > 20:
 		$CorruptionProgress.wait_time = corruption_speeds[2]
-	if corruptionLevel > 30:
+	if corruptionLevel > 25:
 		$CorruptionProgress.wait_time = corruption_speeds[3]
-	if corruptionLevel > 40:
+	if corruptionLevel > 30:
 		$CorruptionProgress.wait_time = corruption_speeds[4]
 
 func _on_MobWave_timeout():

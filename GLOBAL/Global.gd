@@ -14,8 +14,8 @@ var researchSpeed = 1
 
 var isLabBuilt = false
 var isRocketResearched = false
-var hauteurMaxDeConstruction = 10
-var maxTourDePise = 3
+var hauteurMaxDeConstruction = 1
+var maxTourDePise = 0
 
 const GRID_LENGHT = 100
 const GRID_HEIGH = 100
@@ -27,7 +27,7 @@ const COST_ENTREPOT = 50
 const COST_GENERATEUR = 25
 const COST_MUR = 75
 const COST_TURRET = 75
-const COST_ROCKET = 100000
+const COST_ROCKET = 200000
 
 const ENERGY_LAB = 75
 const ENERGY_MINE = 50

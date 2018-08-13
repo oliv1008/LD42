@@ -2,10 +2,19 @@ extends Node2D
 
 func _on_Timer_timeout():
 	Global.ressources = clamp(Global.production + Global.ressources, 0, Global.stock)
-	$CanvasLayer/UI/BatimentsContainrer/TextureRect/RessourcesContainer/MineralsContainer/Container/Text.text = str(Global.ressources, " / ", Global.stock)
+	$CanvasLayer/UI/BatimentsContainrer/TextureRect/RessourcesContainer/MineralsContainer/Container/Text.text = format_text(Global.ressources, Global.stock)
 	$CanvasLayer/UI/BatimentsContainrer/TextureRect/RessourcesContainer/EnergieContainer2/Container/Text.text = str(Global.energyconsummed, " / ", Global.energy)
 	$CanvasLayer/UI/BatimentsContainrer/TextureRect/RessourcesContainer/ResearchContainer3/Container/Text.text = str(Global.researchSpeed)
 	$CanvasLayer/UI/BatimentsContainrer/TextureRect/RessourcesContainer/ProductionContainer4/Container/Text.text = str(Global.production, " /s")
+
+func format_text(a,b):
+	var strA
+	var strB
+	if a >= 10000:
+		strA = str(a/1000, "K")
+	if b >= 10000:
+		strB = str(b/1000, "K")
+	return str(strA, " / ", strB)
 
 func _ready():
 	$Line2D.set_point_position(0, Vector2(0, -64 * Global.hauteurMaxDeConstruction))

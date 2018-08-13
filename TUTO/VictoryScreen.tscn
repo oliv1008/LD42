@@ -7,7 +7,7 @@
 [ext_resource path="res://Assets/cave-story-64.tres" type="DynamicFont" id=5]
 [ext_resource path="res://Assets/caves-story-32.tres" type="DynamicFont" id=6]
 
-[node name="VictoryScreen" type="Control" index="0"]
+[node name="VictoryScreen" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
