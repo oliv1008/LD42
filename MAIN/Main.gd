@@ -1,7 +1,11 @@
 extends Node2D
 
+var police32 = preload("res://Assets/cave-story-32.tres")
+var police24 = preload("res://Assets/cave-story-24.tres")
+
 func _on_Timer_timeout():
 	Global.ressources = clamp(Global.production + Global.ressources, 0, Global.stock)
+
 	$CanvasLayer/UI/BatimentsContainrer/TextureRect/RessourcesContainer/MineralsContainer/Container/Text.text = format_text(Global.ressources, Global.stock)
 	$CanvasLayer/UI/BatimentsContainrer/TextureRect/RessourcesContainer/EnergieContainer2/Container/Text.text = str(Global.energyconsummed, " / ", Global.energy)
 	$CanvasLayer/UI/BatimentsContainrer/TextureRect/RessourcesContainer/ResearchContainer3/Container/Text.text = str(Global.researchSpeed)

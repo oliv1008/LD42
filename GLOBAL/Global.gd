@@ -229,3 +229,6 @@ func restart_game():
 		BatimentsOff[i].queue_free()
 	BatimentsOff = []
 	currentNode = null
+	
+func LaunchRocket():
+	get_tree().change_scene("res://TUTO/VictoryScreen.tscn")

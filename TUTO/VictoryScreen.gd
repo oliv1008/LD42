@@ -14,3 +14,7 @@ func _ready():
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 #	pass
+
+func _input(event):
+	if event.is_action_pressed("ui_accept"):
+		get_tree().quit()
