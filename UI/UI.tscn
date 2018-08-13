@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://UI/UI.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Pixel Art/Icones/icone augmente limite tech.png" type="Texture" id=2]
@@ -20,29 +20,34 @@
 [ext_resource path="res://Assets/Pixel Art/Boutons/To infinity and beyond/Disabled.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Pixel Art/Boutons/Mine/Normal.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Pixel Art/Boutons/Mine/Hover.png" type="Texture" id=20]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Warehouse/Disabled.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Mine/Disabled.png" type="Texture" id=21]
 [ext_resource path="res://Assets/Pixel Art/Icones/Icone energie alpha.png" type="Texture" id=22]
 [ext_resource path="res://Assets/Pixel Art/Boutons/Generator/Normal.png" type="Texture" id=23]
 [ext_resource path="res://Assets/Pixel Art/Boutons/Generator/Hover.png" type="Texture" id=24]
 [ext_resource path="res://Assets/Pixel Art/Boutons/Generator/Disabled.png" type="Texture" id=25]
 [ext_resource path="res://Assets/Pixel Art/Boutons/Warehouse/Normal.png" type="Texture" id=26]
 [ext_resource path="res://Assets/Pixel Art/Boutons/Warehouse/Hover.png" type="Texture" id=27]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Labo/Normal.png" type="Texture" id=28]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Labo/Hover.png" type="Texture" id=29]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Labo/Disabled.png" type="Texture" id=30]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Mur/Normal.png" type="Texture" id=31]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Mur/Hover.png" type="Texture" id=32]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Mur/Disabled.png" type="Texture" id=33]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Turret/Normal.png" type="Texture" id=34]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Turret/Hover.png" type="Texture" id=35]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Turret/Disabled.png" type="Texture" id=36]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Rocket/Normal.png" type="Texture" id=37]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Rocket/Hover.png" type="Texture" id=38]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Rocket/Disabled.png" type="Texture" id=39]
-[ext_resource path="res://Assets/Pixel Art/Boutons/Icone vide.png" type="Texture" id=40]
-[ext_resource path="res://Cave-Story.ttf" type="DynamicFontData" id=41]
-[ext_resource path="res://Assets/Pixel Art/Icones/icone prod labo.png" type="Texture" id=42]
-[ext_resource path="res://Assets/Pixel Art/Icones/icone prod mineraux.png" type="Texture" id=43]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Warehouse/Disabled.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Labo/Normal.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Labo/Hover.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Labo/Disabled.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Mur/Normal.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Mur/Hover.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Mur/Disabled.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Turret/Normal.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Turret/Hover.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Turret/Disabled.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Rocket/Normal.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Rocket/Hover.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Rocket/Disabled.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Icone vide.png" type="Texture" id=41]
+[ext_resource path="res://Cave-Story.ttf" type="DynamicFontData" id=42]
+[ext_resource path="res://Assets/Pixel Art/Icones/icone prod labo.png" type="Texture" id=43]
+[ext_resource path="res://Assets/Pixel Art/Icones/icone prod mineraux.png" type="Texture" id=44]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Restart/Normal.png" type="Texture" id=45]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Restart/Hover.png" type="Texture" id=46]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Quit/Normal.png" type="Texture" id=47]
+[ext_resource path="res://Assets/Pixel Art/Boutons/Quit/Hover.png" type="Texture" id=48]
 
 [sub_resource type="InputEventMouseButton" id=1]
 
@@ -69,10 +74,10 @@ shortcut = SubResource( 1 )
 size = 32
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 41 )
+font_data = ExtResource( 42 )
 _sections_unfolded = [ "Font" ]
 
-[node name="UI" type="Control" index="0"]
+[node name="UI" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -213,6 +218,7 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="ResearchContainer" type="HBoxContainer" parent="." index="2"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -728,6 +734,7 @@ stretch_mode = 4
 
 [node name="BatimentsContainrer" type="HBoxContainer" parent="." index="3"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -741,6 +748,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_constants/separation = 0
 alignment = 0
 _sections_unfolded = [ "custom_constants" ]
 __meta__ = {
@@ -754,7 +762,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 238.0
+margin_right = 242.0
 margin_bottom = 251.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -921,7 +929,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 242.0
-margin_right = 480.0
+margin_right = 484.0
 margin_bottom = 251.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -1025,7 +1033,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 484.0
-margin_right = 722.0
+margin_right = 726.0
 margin_bottom = 251.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -1040,7 +1048,7 @@ shortcut = null
 group = null
 texture_normal = ExtResource( 26 )
 texture_hover = ExtResource( 27 )
-texture_disabled = ExtResource( 21 )
+texture_disabled = ExtResource( 28 )
 _sections_unfolded = [ "Rect", "Size Flags", "Textures" ]
 
 [node name="CostContainer2" type="Container" parent="BatimentsContainrer/Warehouse" index="0"]
@@ -1190,7 +1198,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 726.0
-margin_right = 964.0
+margin_right = 968.0
 margin_bottom = 251.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -1203,9 +1211,9 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = SubResource( 2 )
 group = null
-texture_normal = ExtResource( 28 )
-texture_hover = ExtResource( 29 )
-texture_disabled = ExtResource( 30 )
+texture_normal = ExtResource( 29 )
+texture_hover = ExtResource( 30 )
+texture_disabled = ExtResource( 31 )
 _sections_unfolded = [ "Size Flags", "Textures" ]
 
 [node name="CostContainer3" type="Container" parent="BatimentsContainrer/Laboratory" index="0"]
@@ -1356,7 +1364,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 968.0
-margin_right = 1206.0
+margin_right = 1210.0
 margin_bottom = 251.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -1369,9 +1377,9 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 31 )
-texture_hover = ExtResource( 32 )
-texture_disabled = ExtResource( 33 )
+texture_normal = ExtResource( 32 )
+texture_hover = ExtResource( 33 )
+texture_disabled = ExtResource( 34 )
 _sections_unfolded = [ "Size Flags", "Textures" ]
 
 [node name="CostContainer4" type="Container" parent="BatimentsContainrer/Wall" index="0"]
@@ -1523,7 +1531,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 1210.0
-margin_right = 1448.0
+margin_right = 1452.0
 margin_bottom = 251.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -1536,9 +1544,9 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 34 )
-texture_hover = ExtResource( 35 )
-texture_disabled = ExtResource( 36 )
+texture_normal = ExtResource( 35 )
+texture_hover = ExtResource( 36 )
+texture_disabled = ExtResource( 37 )
 _sections_unfolded = [ "Rect", "Size Flags", "Textures" ]
 
 [node name="CostContainer5" type="Container" parent="BatimentsContainrer/Turret" index="0"]
@@ -1689,7 +1697,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 1452.0
-margin_right = 1690.0
+margin_right = 1694.0
 margin_bottom = 251.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -1702,9 +1710,9 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 37 )
-texture_hover = ExtResource( 38 )
-texture_disabled = ExtResource( 39 )
+texture_normal = ExtResource( 38 )
+texture_hover = ExtResource( 39 )
+texture_disabled = ExtResource( 40 )
 _sections_unfolded = [ "Rect", "Size Flags", "Textures" ]
 
 [node name="CostContainer6" type="Container" parent="BatimentsContainrer/Rocket" index="0"]
@@ -1863,7 +1871,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 40 )
+texture = ExtResource( 41 )
 stretch_mode = 0
 
 [node name="RessourcesContainer" type="VBoxContainer" parent="BatimentsContainrer/TextureRect" index="0"]
@@ -2186,7 +2194,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 42 )
+texture = ExtResource( 43 )
 stretch_mode = 0
 
 [node name="Production Speed" type="Label" parent="BatimentsContainrer/TextureRect/RessourcesContainer" index="6"]
@@ -2286,12 +2294,11 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 43 )
+texture = ExtResource( 44 )
 stretch_mode = 0
 
 [node name="TimerContainer" type="CenterContainer" parent="." index="4"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -2369,14 +2376,83 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="GlobalTimer" type="Timer" parent="." index="5"]
+[node name="UIButtonContainer" type="HBoxContainer" parent="." index="5"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1473.0
+margin_top = 5.0
+margin_right = 1915.0
+margin_bottom = 116.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 30
+alignment = 2
+_sections_unfolded = [ "Anchor", "custom_constants" ]
+
+[node name="Restart" type="TextureButton" parent="UIButtonContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 284.0
+margin_right = 348.0
+margin_bottom = 111.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 45 )
+texture_hover = ExtResource( 46 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="Quit" type="TextureButton" parent="UIButtonContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 378.0
+margin_right = 442.0
+margin_bottom = 111.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 47 )
+texture_hover = ExtResource( 48 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="GlobalTimer" type="Timer" parent="." index="6"]
 
 process_mode = 1
 wait_time = 1.0
 one_shot = true
 autostart = false
 
-[node name="SecondTimer" type="Timer" parent="." index="6"]
+[node name="SecondTimer" type="Timer" parent="." index="7"]
 
 process_mode = 1
 wait_time = 1.0
@@ -2398,6 +2474,10 @@ autostart = false
 [connection signal="pressed" from="BatimentsContainrer/Warehouse" to="." method="_on_Warehouse_pressed"]
 
 [connection signal="pressed" from="BatimentsContainrer/Laboratory" to="." method="_on_Laboratory_pressed"]
+
+[connection signal="pressed" from="UIButtonContainer/Restart" to="." method="_on_Restart_pressed"]
+
+[connection signal="pressed" from="UIButtonContainer/Quit" to="." method="_on_Quit_pressed"]
 
 [connection signal="timeout" from="GlobalTimer" to="." method="on_research_over"]
 

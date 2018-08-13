@@ -10,7 +10,7 @@ var production = 0
 var stock = 100
 var energy = 100
 var energyconsummed = 0
-var researchSpeed = 0
+var researchSpeed = 0.9
 
 var isLabBuilt = false
 var isRocketResearched = false
@@ -22,7 +22,7 @@ const GRID_HEIGH = 100
 const CELL_SIZE = 64
 const CORRRUPTION_SPEED = 5
 
-const COST_LAB = 75
+const COST_LAB = 1
 const COST_MINE = 50
 const COST_ENTREPOT = 50
 const COST_GENERATEUR = 25
@@ -30,7 +30,7 @@ const COST_MUR = 50
 const COST_TURRET = 50
 const COST_ROCKET = 1
 
-const ENERGY_LAB = 40
+const ENERGY_LAB = 1
 const ENERGY_MINE = 40
 const ENERGY_ENTREPOT = 10
 const ENERGY_GENERATEUR = 0
@@ -186,3 +186,26 @@ func addProduction(add):
 
 func addStock(add):
 	stock += add
+
+func restart_game():
+	ressources = 50
+	production = 0
+	stock = 100
+	energy = 100
+	energyconsummed = 0
+	researchSpeed = 0.9
+	isLabBuilt = false
+	isRocketResearched = false
+	hauteurMaxDeConstruction = 1
+	maxTourDePise = 0
+	corruptionLevel = 0
+	labNumber = 0
+	Grid = []
+	init_grid()
+	for i in range(0, Batiments.size()):
+		Batiments[i].queue_free()
+	Batiments = []
+	for i in range(0, BatimentsOff.size()):
+		BatimentsOff[i].queue_free()
+	BatimentsOff = []
+	currentNode = null

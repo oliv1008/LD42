@@ -42,7 +42,7 @@ tracks/1/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 128, 32 )
 
-[node name="Generateur" type="Node2D"]
+[node name="Generateur" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
