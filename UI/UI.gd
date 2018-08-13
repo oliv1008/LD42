@@ -24,6 +24,7 @@ const MAX_ROCKET_LEVEL = 1
 var current_research
 
 func _ready():
+#-------INITIALISATION DES INFOS DES BATIMENTS SUR LES BOUTONS-------------------------------
 	$"BatimentsContainrer/Mine/CostContainer/EnergieContainer/- XXX".text = str("- ", Global.ENERGY_MINE)
 	$"BatimentsContainrer/Mine/CostContainer/MineraiContainer/- XXX".text = str("- ", Global.COST_MINE)
 	$"BatimentsContainrer/Wall/CostContainer4/EnergieContainer/- XXX".text = str("- ", Global.ENERGY_MUR)
@@ -37,13 +38,21 @@ func _ready():
 	$"BatimentsContainrer/Generator/CostContainer2/MineraiContainer/- XXX".text = str("- ", Global.COST_GENERATEUR)
 	$"BatimentsContainrer/Laboratory/CostContainer3/EnergieContainer/- XXX".text = str("- ", Global.ENERGY_LAB)
 	$"BatimentsContainrer/Laboratory/CostContainer3/MineraiContainer/- XXX".text = str("- ", Global.COST_LAB)
-
+#-------INITIALISATION DU TIMER POUR "Remaining Time"------------------------------
+	var total_game_time = Global.CORRRUPTION_SPEED * Global.GRID_LENGHT/2
+	$RemainingTimer.wait_time = total_game_time
+	$RemainingTimer.start()
+	
 func _process(delta):
 	if Global.isLabBuilt == false:
 		on_research_over(true)
 
 	var ressources = Global.ressources
 	var energy_available = Global.energy - Global.energyconsummed
+#-----------TIMER----------------------------------------------
+	var remaining_time = $RemainingTimer.time_left
+	remaining_time = Global.secToTime(remaining_time)
+	$TimerContainer/VBoxContainer/Time.text = remaining_time
 #------------BATIMENTS--------------------------
 	if ressources < Global.COST_MINE or energy_available < Global.ENERGY_MINE:
 		$BatimentsContainrer/Mine.disabled = true
@@ -95,7 +104,8 @@ func _process(delta):
 			$"ResearchContainer/Upgrade Limit/Container/MineraiContainer2/MineraiText".visible = false
 		else:
 			var total_time = Ski_is_research_time[Ski_is_level] / Global.researchSpeed
-			$"ResearchContainer/Upgrade Limit/Container/TimeContainer/Time".text = str(total_time)
+			total_time = Global.secToTime(total_time)
+			$"ResearchContainer/Upgrade Limit/Container/TimeContainer/Time".text = total_time
 			$"ResearchContainer/Upgrade Limit/Container/MineraiContainer2/- XXX".text = str(Ski_is_research_cost[Ski_is_level])
 			if ressources < Ski_is_research_cost[Ski_is_level]:
 				$"ResearchContainer/Upgrade Limit".disabled = true
@@ -110,7 +120,8 @@ func _process(delta):
 			$"ResearchContainer/Pisa/Container2/MineraiContainer2/MineraiText".visible = false
 		else:
 			var total_time = Pisa_research_time[Pisa_level] / Global.researchSpeed
-			$ResearchContainer/Pisa/Container2/TimeContainer/Time.text = str(total_time)
+			total_time = Global.secToTime(total_time)
+			$ResearchContainer/Pisa/Container2/TimeContainer/Time.text = total_time
 			$"ResearchContainer/Pisa/Container2/MineraiContainer2/- XXX".text = str(Pisa_research_cost[Pisa_level])
 			if ressources < Pisa_research_cost[Pisa_level]:
 				$ResearchContainer/Pisa.disabled = true
@@ -126,7 +137,8 @@ func _process(delta):
 			$"ResearchContainer/Rocket Research/Container3/MineraiContainer2/MineraiText".visible = false
 		else:
 			var total_time = Rocket_research_time[Rocket_level] / Global.researchSpeed
-			$"ResearchContainer/Rocket Research/Container3/TimeContainer/Time".text = str(total_time)
+			total_time = Global.secToTime(total_time)
+			$"ResearchContainer/Rocket Research/Container3/TimeContainer/Time".text = total_time
 			$"ResearchContainer/Rocket Research/Container3/MineraiContainer2/- XXX".text = str(Rocket_research_cost[Rocket_level])
 			if Rocket_level >= 1 or ressources < Rocket_research_cost[Rocket_level]:
 				$"ResearchContainer/Rocket Research".disabled = true
@@ -242,7 +254,9 @@ func on_research_over(cancel = false):
 func _on_Restart_pressed():
 	Global.restart_game()
 	get_tree().reload_current_scene()
-
-
+	
 func _on_Quit_pressed():
 	get_tree().quit()
+
+func _on_RemainingTimer_timeout():
+	print("FIN DU JEU")
