@@ -24,7 +24,7 @@ func _process(delta):
 	if oldHauteurMaxDeConstruction != Global.hauteurMaxDeConstruction:
 		updateLine()
 		oldHauteurMaxDeConstruction = Global.hauteurMaxDeConstruction
-		
+
 func updateLine():
 	$Line2D.set_point_position(0, Vector2(0, -Global.CELL_SIZE * Global.hauteurMaxDeConstruction))
 	$Line2D.set_point_position(1, Vector2(Global.CELL_SIZE * Global.GRID_LENGHT, -Global.CELL_SIZE * Global.hauteurMaxDeConstruction))

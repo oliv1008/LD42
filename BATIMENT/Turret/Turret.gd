@@ -12,8 +12,8 @@ func _ready():
 	pass
 
 var ennemies = []
-var boostScale = [1.0, 1.5, 2.0, 3.0, 5.0]
-const TURRET_SPEED = 3.0
+var boostScale = [1.0, 1.25, 1.5, 2.0, 3.0]
+const TURRET_SPEED = 2.0
 
 func specific_build():
 	attackSpeed = boostScale[boostLevel - 1]
@@ -31,6 +31,7 @@ func attack():
 	if ennemies.size() != 0:
 		if ennemies[0].get_node("KinematicBody2D") != null:
 			ennemies[0].get_node("KinematicBody2D").queue_free()
+			ennemies[0].set_physics_process(false)
 			drawLaser(ennemies[0])
 		ennemies.remove(0)
 

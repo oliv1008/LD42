@@ -1,17 +1,29 @@
 extends Node2D
 
 var corruptionLevel = 0
+var triggerPesant = true
+var valPesant = 46
+var triggerHappy = true
+var valHappy = 8
+var waveTime = 60
+
+var ennemyScene = preload("res://ENNEMIES/Ennemies.tscn")
+var ennemiesPerWaveSide = 15
+
+var corruption_speeds = [8, 10, 15, 20, 30]
+var flag = [true, true, true]
+var step = [50, 30, 15]
 
 func _ready():
-	$CorruptionProgress.wait_time = Global.CORRRUPTION_SPEED
+	$CorruptionProgress.wait_time = corruption_speeds[0]
+	$MobWave.wait_time = waveTime
+	$MobWave.start()
 	$CorruptionProgress.start()
 	pass
 
 func _on_Timer_timeout():
 	CorruptionProgress()
 
-var flag = [true, true, true]
-var step = [50, 30, 15]
 func _process(delta):
 	var time_left = $MobWave.time_left
 	for i in range(0, step.size()):
@@ -20,8 +32,18 @@ func _process(delta):
 			$CanvasLayer/Control/SEC/Label.text = str("NEXT WAVE IN ", step[i], " SECONDS !")
 			flag[i] = false
 			break
+		
 
 func CorruptionProgress():
+	if corruptionLevel >= valPesant and triggerPesant:
+		get_parent().get_node("AudioPesant").play()
+		get_parent().get_node("AudioPesant").get_node("AnimationPlayer").play("FadeIn")
+		triggerPesant = false
+	elif corruptionLevel >= valHappy and triggerHappy:
+		get_parent().get_node("AudioHappy").play()
+		get_parent().get_node("AudioHappy").get_node("AnimationPlayer").play("FadeIn")
+		triggerHappy = false
+ 
 	$LeftCorruption.rect_size += Vector2(Global.CELL_SIZE, 0)
 	$RightCorruption.rect_size += Vector2(Global.CELL_SIZE, 0)
 	$RightCorruption.rect_position -= Vector2(Global.CELL_SIZE, 0)
@@ -33,6 +55,14 @@ func CorruptionProgress():
 			building.corrupted()
 	corruptionLevel += 1
 	Global.corruptionLevel = corruptionLevel
+	if corruptionLevel > 10:
+		$CorruptionProgress.wait_time = corruption_speeds[1]
+	if corruptionLevel > 20:
+		$CorruptionProgress.wait_time = corruption_speeds[2]
+	if corruptionLevel > 30:
+		$CorruptionProgress.wait_time = corruption_speeds[3]
+	if corruptionLevel > 40:
+		$CorruptionProgress.wait_time = corruption_speeds[4]
 
 func _on_MobWave_timeout():
 	$CanvasLayer/Control/SEC/AnimationPlayer.play("TimeUntilNextWave")
@@ -40,9 +70,6 @@ func _on_MobWave_timeout():
 	for i in range(0, flag.size()):
 		flag[i] = true
 	new_mob_wave()
-
-var ennemyScene = preload("res://ENNEMIES/Ennemies.tscn")
-var ennemiesPerWaveSide = 5
 
 func new_mob_wave():
 	for i in range(0, ennemiesPerWaveSide):

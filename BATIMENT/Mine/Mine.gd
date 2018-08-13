@@ -10,7 +10,7 @@ func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	pass
-var boostScale = [10, 15, 20, 30, 60]
+var boostScale = [10, 15, 20, 25, 40]
 
 func specific_build():
 	ressourcesProduction = boostScale[boostLevel - 1]

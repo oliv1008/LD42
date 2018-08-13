@@ -87,7 +87,7 @@ func turnOff(outOfEnergy = true):
 		
 		if type == Global.LABORATOIRE:
 			Global.labNumber = clamp (Global.labNumber - 1, 0, 100000000)
-			
+
 func turnOn():
 	isOff = false
 	if type == Global.MINE:
@@ -98,12 +98,14 @@ func turnOn():
 		Global.stock += stock
 	elif type == Global.TURRET:
 		state = 1
-		
+	elif type == Global.GENERATEUR:
+		Global.energy += energyProduction
 	if type == Global.LABORATOIRE:
 		Global.labNumber += 1
 	Global.energyconsummed += Energies[type]
 	$Sprite.modulate = Color(1, 1, 1, 1)
-	$NoCurrent.queue_free()
+	if ($NoCurrent != null):
+		$NoCurrent.queue_free()
 
 func corrupted(): 
 	smartRemove(false)
@@ -111,6 +113,9 @@ func corrupted():
 func smartRemove(outOfEnergy = false):
 	print("REMOVE")
 	turnOff(outOfEnergy)
+	
+	if type == Global.GENERATEUR:
+		Global.energy -= energyProduction
 	energyProduction = 0
 	ressourcesProduction = 0
 	stock = 0
