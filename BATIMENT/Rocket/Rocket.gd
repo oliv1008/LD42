@@ -12,4 +12,7 @@ func _ready():
 	pass
 
 func specific_build():
+	$AnimationPlayer.play("Rocket")
+	$Sprite/Particles2D.visible = true
+func animationEnd():
 	Global.LaunchRocket()

@@ -28,6 +28,7 @@ const COST_GENERATEUR = 25
 const COST_MUR = 75
 const COST_TURRET = 75
 const COST_ROCKET = 125000
+#const COST_ROCKET = 1
 
 const ENERGY_LAB = 75
 const ENERGY_MINE = 50

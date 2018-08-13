@@ -19,6 +19,7 @@ const MAX_PISA_LEVEL = 3
 var Rocket_research_cost = [75000]
 var Rocket_research_time = [480]
 var Rocket_level = 0
+#var Rocket_level = 1
 const MAX_ROCKET_LEVEL = 1
 
 var current_research
