@@ -42,6 +42,7 @@ func _input(event):
 		build()
 	elif event.is_action_pressed("ui_cancel"):
 		queue_free()
+		Global.currentNode = null
 
 func build():
 	state = 1

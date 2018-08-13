@@ -45,7 +45,6 @@ func _ready():
 	$"BatimentsContainrer/Generator/CostContainer2/MineraiContainer/- XXX".text = str("- ", Global.COST_GENERATEUR)
 	$"BatimentsContainrer/Laboratory/CostContainer3/EnergieContainer/- XXX".text = str("- ", Global.ENERGY_LAB)
 	$"BatimentsContainrer/Laboratory/CostContainer3/MineraiContainer/- XXX".text = str("- ", Global.COST_LAB)
-
 #-------INITIALISATION DU TIMER POUR "Remaining Time"------------------------------
 
 	var total_game_time = Global.GRID_LENGHT/2
@@ -249,6 +248,7 @@ func on_research_over(cancel = false):
 	$ResearchAndLoadingContainer/LifeBar.visible = false
 	$ResearchAndLoadingContainer/ResearchButton.visible = true
 	if cancel == false:
+		$AudioStreamPlayer.play()
 		if current_research == "Sky_is":
 			Global.hauteurMaxDeConstruction += Sky_is_research_bonus[Ski_is_level]
 			Ski_is_level += 1

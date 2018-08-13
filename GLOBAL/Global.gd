@@ -170,6 +170,7 @@ func initScene(scene):
 	if ressources >= Prices[scene] && (energy - energyconsummed >= Energies[scene] or Energies[scene] <= 0) :
 		if currentNode != null:
 			currentNode.queue_free()
+			currentNode = null
 		var node = scene.instance()
 		add_child(node)
 		currentNode = node

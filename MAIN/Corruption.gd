@@ -10,7 +10,7 @@ var waveTime = 100
 var ennemyScene = preload("res://ENNEMIES/Ennemies.tscn")
 var ennemiesPerWaveSide = 2
 
-var corruption_speeds = [10, 12, 18, 23, 35]
+var corruption_speeds = [12, 14, 18, 23, 35]
 var flag = [true, true, true]
 var step = [60, 30, 15]
 

@@ -13,7 +13,7 @@ func _ready():
 
 var ennemies = []
 var boostScale = [1.0, 1.25, 1.5, 1.75, 2.0]
-const TURRET_SPEED = 6.0
+const TURRET_SPEED = 5.0
 
 func specific_build():
 	attackSpeed = boostScale[boostLevel - 1]
