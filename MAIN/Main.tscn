@@ -90,7 +90,6 @@ _sections_unfolded = [ "Border", "Capping", "Fill", "Transform", "Z Index" ]
 
 [node name="Corruption" type="Node2D" parent="." index="5"]
 
-editor/display_folded = true
 script = ExtResource( 4 )
 
 [node name="LeftCorruption" type="ColorRect" parent="Corruption" index="0"]

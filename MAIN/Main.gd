@@ -9,7 +9,7 @@ func _on_Timer_timeout():
 	$CanvasLayer/UI/BatimentsContainrer/TextureRect/RessourcesContainer/MineralsContainer/Container/Text.text = format_text(Global.ressources, Global.stock)
 	$CanvasLayer/UI/BatimentsContainrer/TextureRect/RessourcesContainer/EnergieContainer2/Container/Text.text = str(Global.energyconsummed, " / ", Global.energy)
 	$CanvasLayer/UI/BatimentsContainrer/TextureRect/RessourcesContainer/ResearchContainer3/Container/Text.text = str(Global.researchSpeed)
-	$CanvasLayer/UI/BatimentsContainrer/TextureRect/RessourcesContainer/ProductionContainer4/Container/Text.text = str(Global.production, " /s")
+	$CanvasLayer/UI/BatimentsContainrer/TextureRect/RessourcesContainer/ProductionContainer4/Container/Text.text = str(format_text_2(Global.production), " /s")
 
 func format_text(a,b):
 	var strA = str(a)
@@ -19,6 +19,11 @@ func format_text(a,b):
 	if b >= 10000:
 		strB = str(b/1000, "K")
 	return str(strA, " / ", strB)
+func format_text_2(a):
+	var strA = str(a)
+	if a >= 10000:
+		strA = str(a/1000, "K")
+	return str(strA)
 
 func _ready():
 	$Line2D.set_point_position(0, Vector2(0, -64 * Global.hauteurMaxDeConstruction))

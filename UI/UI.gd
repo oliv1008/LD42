@@ -5,9 +5,9 @@ var TextureResearchIcon = { "Sky_is" : preload("res://Assets/Pixel Art/Icones/ic
 							"Rocket" : preload("res://Assets/Pixel Art/Icones/icone tech rocket.png")
 }
 
-var Ski_is_research_cost = [50, 100, 200, 500, 1000, 2000, 5000, 10000, 50000, 100000]
+var Ski_is_research_cost = [50, 100, 200, 500, 1000, 2000, 5000, 10000, 20000, 500000]
 var Ski_is_research_time = [10, 20, 30, 40, 50, 60, 120, 240, 480, 960]
-var Sky_is_research_bonus = [2, 2, 3, 3, 3, 4, 4, 5, 15, 25]
+var Sky_is_research_bonus = [2, 2, 3, 3, 4, 5, 5, 6, 15, 25]
 var Ski_is_level = 0
 const MAX_SKY_LEVEL = 9
 
@@ -23,6 +23,12 @@ const MAX_ROCKET_LEVEL = 1
 
 var current_research
 
+func format_text_2(a):
+	var strA = str(a)
+	if a >= 10000:
+		strA = str(a/1000, "K")
+	return str(strA)
+
 func _ready():
 #-------INITIALISATION DES INFOS DES BATIMENTS SUR LES BOUTONS-------------------------------
 	$"BatimentsContainrer/Mine/CostContainer/EnergieContainer/- XXX".text = str("- ", Global.ENERGY_MINE)
@@ -30,7 +36,7 @@ func _ready():
 	$"BatimentsContainrer/Wall/CostContainer4/EnergieContainer/- XXX".text = str("- ", Global.ENERGY_MUR)
 	$"BatimentsContainrer/Wall/CostContainer4/MineraiContainer/- XXX".text = str("- ", Global.COST_MUR)
 	$"BatimentsContainrer/Rocket/CostContainer6/EnergieContainer/- XXX".text = str("- ", Global.ENERGY_ROCKET)
-	$"BatimentsContainrer/Turret/CostContainer5/MineraiContainer/- XXX".text = str("- ", Global.COST_TURRET)
+	$"BatimentsContainrer/Turret/CostContainer5/MineraiContainer/- XXX".text = str("- ", format_text_2(Global.COST_TURRET))
 	$"BatimentsContainrer/Turret/CostContainer5/EnergieContainer/- XXX".text = str("- ", Global.ENERGY_TURRET)
 	$"BatimentsContainrer/Rocket/CostContainer6/MineraiContainer/- XXX".text = str("- ", Global.COST_ROCKET)
 	$"BatimentsContainrer/Warehouse/CostContainer2/MineraiContainer/- XXX".text = str("- ", Global.COST_ENTREPOT)
@@ -107,7 +113,7 @@ func _process(delta):
 			var total_time = Ski_is_research_time[Ski_is_level] / Global.researchSpeed
 			total_time = Global.secToTime(total_time)
 			$"ResearchContainer/Upgrade Limit/Container/TimeContainer/Time".text = total_time
-			$"ResearchContainer/Upgrade Limit/Container/MineraiContainer2/- XXX".text = str(Ski_is_research_cost[Ski_is_level])
+			$"ResearchContainer/Upgrade Limit/Container/MineraiContainer2/- XXX".text = format_text_2(Ski_is_research_cost[Ski_is_level])
 			if ressources < Ski_is_research_cost[Ski_is_level]:
 				$"ResearchContainer/Upgrade Limit".disabled = true
 			else:
@@ -123,7 +129,7 @@ func _process(delta):
 			var total_time = Pisa_research_time[Pisa_level] / Global.researchSpeed
 			total_time = Global.secToTime(total_time)
 			$ResearchContainer/Pisa/Container2/TimeContainer/Time.text = total_time
-			$"ResearchContainer/Pisa/Container2/MineraiContainer2/- XXX".text = str(Pisa_research_cost[Pisa_level])
+			$"ResearchContainer/Pisa/Container2/MineraiContainer2/- XXX".text = format_text_2(Pisa_research_cost[Pisa_level])
 			if ressources < Pisa_research_cost[Pisa_level]:
 				$ResearchContainer/Pisa.disabled = true
 				
@@ -140,7 +146,7 @@ func _process(delta):
 			var total_time = Rocket_research_time[Rocket_level] / Global.researchSpeed
 			total_time = Global.secToTime(total_time)
 			$"ResearchContainer/Rocket Research/Container3/TimeContainer/Time".text = total_time
-			$"ResearchContainer/Rocket Research/Container3/MineraiContainer2/- XXX".text = str(Rocket_research_cost[Rocket_level])
+			$"ResearchContainer/Rocket Research/Container3/MineraiContainer2/- XXX".text = format_text_2(Rocket_research_cost[Rocket_level])
 			if Rocket_level >= 1 or ressources < Rocket_research_cost[Rocket_level]:
 				$"ResearchContainer/Rocket Research".disabled = true
 				

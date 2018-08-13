@@ -4,7 +4,7 @@ var direction = 1
 const ATTACK_DISTANCE = 64
 var coolDown
 var coolDownTime = 1
-var speed = 150
+var speed = 100
 
 func _ready():
 	$AnimationPlayer.play("Walk")
