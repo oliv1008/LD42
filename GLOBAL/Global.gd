@@ -23,19 +23,19 @@ const CELL_SIZE = 64
 const CORRRUPTION_SPEED = 5
 
 const COST_LAB = 1
-const COST_MINE = 50
-const COST_ENTREPOT = 50
-const COST_GENERATEUR = 25
-const COST_MUR = 50
-const COST_TURRET = 50
+const COST_MINE = 1
+const COST_ENTREPOT = 1
+const COST_GENERATEUR = 1
+const COST_MUR = 1
+const COST_TURRET = 1
 const COST_ROCKET = 1
 
-const ENERGY_LAB = 1
-const ENERGY_MINE = 40
-const ENERGY_ENTREPOT = 10
+const ENERGY_LAB = 60
+const ENERGY_MINE = 1
+const ENERGY_ENTREPOT = 1
 const ENERGY_GENERATEUR = 0
 const ENERGY_MUR = 0
-const ENERGY_TURRET = 10
+const ENERGY_TURRET = 1
 const ENERGY_ROCKET = 0
 
 var corruptionLevel = 0

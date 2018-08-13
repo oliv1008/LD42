@@ -146,6 +146,13 @@ func _process(delta):
 			else:
 				$"ResearchContainer/Rocket Research".disabled = false
 
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		if visible == false:
+			visible = true
+		else:
+			visible = false
+
 func _on_Laboratory_pressed():
 	Global.initScene(Global.labScene)
 

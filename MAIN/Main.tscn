@@ -17,7 +17,7 @@ use_filter = true
 font_data = ExtResource( 6 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Main" type="Node2D" index="0"]
+[node name="Main" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -48,6 +48,7 @@ tile_data = PoolIntArray( 19, 2, 0, 20, 1, 0, 21, 0, 0, 22, 1, 0, 23, 2, 0, 24, 
 
 [node name="Line2D" type="Line2D" parent="." index="3"]
 
+visible = false
 points = PoolVector2Array( 0, -70, 6400, -70 )
 width = 5.0
 default_color = Color( 0.078949, 0.449971, 0.777344, 0.657451 )
@@ -58,6 +59,7 @@ _sections_unfolded = [ "Border", "Capping", "Fill", "Transform", "Z Index" ]
 
 [node name="Center" type="Line2D" parent="." index="4"]
 
+visible = false
 points = PoolVector2Array( 3200, -6400, 3200, 2000 )
 width = 5.0
 default_color = Color( 0.109048, 0.773438, 0.087616, 0.657451 )
@@ -200,8 +202,6 @@ max_lines_visible = -1
 _sections_unfolded = [ "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
 [node name="Ennemies" type="Node2D" parent="." index="6"]
-
-editor/display_folded = true
 
 [node name="Ennemies" parent="Ennemies" index="0" instance=ExtResource( 7 )]
 

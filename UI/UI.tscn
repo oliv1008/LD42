@@ -735,7 +735,6 @@ stretch_mode = 4
 
 [node name="BatimentsContainrer" type="HBoxContainer" parent="." index="3"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -752,9 +751,6 @@ size_flags_vertical = 1
 custom_constants/separation = 0
 alignment = 0
 _sections_unfolded = [ "custom_constants" ]
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Mine" type="TextureButton" parent="BatimentsContainrer" index="0"]
 
@@ -2300,6 +2296,7 @@ stretch_mode = 0
 
 [node name="TimerContainer" type="CenterContainer" parent="." index="4"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0

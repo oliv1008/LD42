@@ -86,7 +86,8 @@ func turnOff(outOfEnergy = true):
 		isOff = true
 		
 		if type == Global.LABORATOIRE:
-			Global.labNumber -= 1
+			Global.labNumber = clamp (Global.labNumber - 1, 0, 100000000)
+			
 func turnOn():
 	isOff = false
 	if type == Global.MINE:
