@@ -16,7 +16,7 @@ var Pisa_research_time = [30, 120, 480]
 var Pisa_level = 0
 const MAX_PISA_LEVEL = 3
 
-var Rocket_research_cost = [100000]
+var Rocket_research_cost = [75000]
 var Rocket_research_time = [480]
 var Rocket_level = 0
 const MAX_ROCKET_LEVEL = 1
