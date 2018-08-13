@@ -39,7 +39,7 @@ tracks/0/keys = {
 "values": [ -80.0, 0.0 ]
 }
 
-[node name="Main" type="Node2D" index="0"]
+[node name="Main" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -90,6 +90,7 @@ _sections_unfolded = [ "Border", "Capping", "Fill", "Transform", "Z Index" ]
 
 [node name="Corruption" type="Node2D" parent="." index="5"]
 
+editor/display_folded = true
 script = ExtResource( 4 )
 
 [node name="LeftCorruption" type="ColorRect" parent="Corruption" index="0"]

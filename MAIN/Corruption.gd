@@ -2,7 +2,7 @@ extends Node2D
 
 var corruptionLevel = 0
 var triggerPesant = true
-var valPesant = 40
+var valPesant = 25
 var triggerHappy = true
 var valHappy = 10
 var waveTime = 100
@@ -10,7 +10,7 @@ var waveTime = 100
 var ennemyScene = preload("res://ENNEMIES/Ennemies.tscn")
 var ennemiesPerWaveSide = 2
 
-var corruption_speeds = [8, 10, 15, 20, 30]
+var corruption_speeds = [10, 12, 18, 23, 35]
 var flag = [true, true, true]
 var step = [60, 30, 15]
 
@@ -61,7 +61,7 @@ func CorruptionProgress():
 		$CorruptionProgress.wait_time = corruption_speeds[2]
 	if corruptionLevel > 25:
 		$CorruptionProgress.wait_time = corruption_speeds[3]
-	if corruptionLevel > 35:
+	if corruptionLevel > 30:
 		$CorruptionProgress.wait_time = corruption_speeds[4]
 
 func _on_MobWave_timeout():

@@ -14,7 +14,7 @@ var researchSpeed = 1
 
 var isLabBuilt = false
 var isRocketResearched = false
-var hauteurMaxDeConstruction = 1
+var hauteurMaxDeConstruction = 2
 var maxTourDePise = 0
 
 const GRID_LENGHT = 100
@@ -121,6 +121,7 @@ var rocketSceneSprites = [preload("res://Assets/Pixel Art/Batiments/Rocket.png")
 enum types {LABORATOIRE, MINE, ENTREPOT, GENERATEUR, MUR, TURRET, ROCKET}
 var Textures = {LABORATOIRE:labSceneSprites, GENERATEUR:generatorSceneSprites, MINE:mineSceneSprites,\
 		TURRET:turretSceneSprites, ENTREPOT:entrepotSceneSprites, MUR:murSceneSprites, ROCKET:rocketSceneSprites}
+
 var labNumber = 0
 var currentNode
 func _process(delta):
