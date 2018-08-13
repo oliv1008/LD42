@@ -13,7 +13,7 @@ func _ready():
 	tie.connect("tag_buff", self, "_on_tag_buff")
 	
 	tie.set_color(Color(1,1,1))
-	tie.buff_text("Hello, I'm commander Jean-Francois, please excuse my English accent and spelling mistakes.\n\n\nLet me give you a quick recap of the situation :\n", 0.005)
+	tie.buff_text("Hello, I'm commander Francois.\n\n\nLet me give you a quick recap of the situation :\n", 0.005)
 	tie.buff_break()
 	tie.buff_text("- CORRUPTION is spreading and MONSTERS are taking control over this planet !\n\n- We are \"running out of space\" and our world will be fully CORRUPTED in just a few minutes !\n\n", 0.005)
 	tie.buff_break()
