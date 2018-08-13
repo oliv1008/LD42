@@ -1,7 +1,6 @@
 extends Control
 
 onready var tie = $TextInterfaceEngine
-onready var tie2 = $OneLastThing
 var show_next = 0
 
 func _ready():
@@ -13,16 +12,16 @@ func _ready():
 	tie.connect("resume_break", self, "_on_resume_break")
 	tie.connect("tag_buff", self, "_on_tag_buff")
 	
-	tie.buff_text("3 TECHNOLOGIES are available once you built\n your first laboratory:\n\n\n", 0.01)
+	tie.buff_text("3 TECHNOLOGIES are available once you built\n your first laboratory:\n\n\n", 0.005)
 	tie.buff_break()
-	tie.buff_text("- \"SKY IS THE LIMIT\" will increase the height\n limit of construction (blue line) allowing you to\n stack more and more buildings on top of each\n other (max lvl : 10)\n\n", 0.01)
+	tie.buff_text("- \"SKY IS THE LIMIT\" will increase the height\n limit of construction (blue line) allowing you to\n stack more and more buildings on top of each\n other (max lvl : 10)\n\n", 0.005)
 	tie.buff_break()
-	tie.buff_text("- \"LEANING TOWER OF PISA\" let you build\n further on the\n side (max lvl : 3) \n\n", 0.01)
+	tie.buff_text("- \"LEANING TOWER OF PISA\" let you build\n further on the\n side (max lvl : 3) \n\n", 0.005)
 	tie.buff_break()
-	tie.buff_text("- \"TO INFINITY AND BEYOND\" unlock\n the ROCKET (max lvl : 1)\n\n\n\n", 0.01)
+	tie.buff_text("- \"TO INFINITY AND BEYOND\" unlock\n the ROCKET (max lvl : 1)\n\n\n\n", 0.005)
 	tie.buff_break()
 	tie.buff_text(str("You will need to be fast. Therefore, shorcuts are available : 1,...,7 or azertyu/qwertyu or NUM_PAD1,...,NUM_PAD7.\n\n",\
-			"Please save us from the mankind extinction ! Dying after so much effort for LD42 would piss me off ! Good Luck !"), 0.01)	
+			"Please save us from the mankind extinction ! Dying after so much effort for LD42 would piss me off ! Good Luck !"), 0.005)	
 	tie.buff_break()
 	tie.set_state(tie.STATE_OUTPUT)
 #func _process(delta):
