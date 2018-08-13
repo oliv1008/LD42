@@ -3,7 +3,8 @@ extends Node2D
 var direction = 1
 const ATTACK_DISTANCE = 64
 var coolDown
-var speed = 200
+var coolDownTime = 1
+var speed = 150
 
 func _ready():
 	$AnimationPlayer.play("Walk")
@@ -23,7 +24,7 @@ func _physics_process(delta):
 		queue_free()
 func attack(result):
 	if coolDown:
-		result.receiveAttack(10.0)
+		result.receiveAttack(5.0)
 		$AnimationPlayer.play("Attack")
 		coolDown = false
 func kill():
@@ -32,6 +33,7 @@ func kill():
 
 func _on_Cooldown_timeout():
 	coolDown = true
+	$Cooldown.wait_time = coolDownTime + (rand_range(0, 1))
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	$AnimationPlayer.play("Walk")

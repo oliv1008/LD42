@@ -78,6 +78,8 @@ func turnOff(outOfEnergy = true):
 			Global.stock -= stock
 		elif type == Global.TURRET:
 			state = 2
+		elif type == Global.GENERATEUR:
+			Global.energy -= energyProduction
 		Global.energyconsummed -= Energies[type]
 	
 		if outOfEnergy:
@@ -86,7 +88,7 @@ func turnOff(outOfEnergy = true):
 		isOff = true
 		
 		if type == Global.LABORATOIRE:
-			Global.labNumber -= 1
+			Global.labNumber = clamp(Global.labNumber - 1, 0, 100000)
 func turnOn():
 	isOff = false
 	if type == Global.MINE:
@@ -97,6 +99,8 @@ func turnOn():
 		Global.stock += stock
 	elif type == Global.TURRET:
 		state = 1
+	elif type == Global.GENERATEUR:
+		Global.energy += energyProduction
 		
 	if type == Global.LABORATOIRE:
 		Global.labNumber += 1

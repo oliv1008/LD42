@@ -5,19 +5,19 @@ var TextureResearchIcon = { "Sky_is" : preload("res://Assets/Pixel Art/Icones/ic
 							"Rocket" : preload("res://Assets/Pixel Art/Icones/icone tech rocket.png")
 }
 
-var Ski_is_research_cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-var Ski_is_research_time = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
-var Sky_is_research_bonus = [1, 1, 1, 1, 2, 2, 2, 3, 3, 3]
+var Ski_is_research_cost = [50, 100, 200, 500, 1000, 2000, 5000, 10000, 50000, 10000]
+var Ski_is_research_time = [10, 20, 30, 40, 50, 60, 70, 80, 120, 240]
+var Sky_is_research_bonus = [2, 2, 2, 3, 3, 3, 4, 6, 8, 10]
 var Ski_is_level = 0
 const MAX_SKY_LEVEL = 9
 
-var Pisa_research_cost = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-var Pisa_research_time = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+var Pisa_research_cost = [50, 200, 1000, 4, 5, 6, 7, 8, 9, 10]
+var Pisa_research_time = [10, 60, 120, 40, 50, 60, 70, 80, 120, 240]
 var Pisa_level = 0
 const MAX_PISA_LEVEL = 3
 
-var Rocket_research_cost = [1]
-var Rocket_research_time = [10]
+var Rocket_research_cost = [10000]
+var Rocket_research_time = [240]
 var Rocket_level = 0
 const MAX_ROCKET_LEVEL = 1
 
