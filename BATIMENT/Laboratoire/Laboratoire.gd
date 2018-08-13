@@ -9,6 +9,7 @@ func _ready():
 	maxHealth = 40
 		
 var boostScale = [0.1, 0.2, 0.3, 0.4, 0.5]
+
 func specific_build():
 	researchSpeed = boostScale[boostLevel - 1]
 	Global.researchSpeed += researchSpeed

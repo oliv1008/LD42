@@ -28,7 +28,7 @@ const COST_ENTREPOT = 1
 const COST_GENERATEUR = 1
 const COST_MUR = 1
 const COST_TURRET = 1
-const COST_ROCKET = 1
+const COST_ROCKET = 100000
 
 const ENERGY_LAB = 60
 const ENERGY_MINE = 1
@@ -220,3 +220,6 @@ func restart_game():
 		BatimentsOff[i].queue_free()
 	BatimentsOff = []
 	currentNode = null
+	
+func LaunchRocket():
+	get_tree().change_scene("res://TUTO/VictoryScreen.tscn")
