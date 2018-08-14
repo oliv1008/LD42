@@ -245,6 +245,7 @@ func update_loading_bar():
 func on_research_over(cancel = false):
 	$GlobalTimer.stop()
 	$SecondTimer.stop()
+	$AudioStreamPlayer.play()
 	$IconResearch.visible = false
 	$ResearchAndLoadingContainer/LifeBar.visible = false
 	$ResearchAndLoadingContainer/ResearchButton.visible = true
