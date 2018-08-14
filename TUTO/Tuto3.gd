@@ -16,7 +16,7 @@ func _ready():
 	tie.buff_break()
 	tie.buff_text("- \"SKY IS THE LIMIT\" will increase the height\n limit of construction (blue line) allowing you to\n stack more and more buildings on top of each\n other (max lvl : 10)\n\n", 0.005)
 	tie.buff_break()
-	tie.buff_text("- \"LEANING TOWER OF PISA\" let you build\n further on the\n side (max lvl : 3) \n\n", 0.005)
+	tie.buff_text("- \"LEANING TOWER OF PISA\" let you build\n further on the side (max lvl : 3) \n\n", 0.005)
 	tie.buff_break()
 	tie.buff_text("- \"TO INFINITY AND BEYOND\" unlock\n the ROCKET (max lvl : 1)\n\n\n\n", 0.005)
 	tie.buff_break()

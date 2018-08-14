@@ -3,14 +3,12 @@ extends Node2D
 var corruptionLevel = 0
 var triggerPesant = true
 var valPesant = 25
-var triggerHappy = true
-var valHappy = 10
 var waveTime = 100
 
 var ennemyScene = preload("res://ENNEMIES/Ennemies.tscn")
 var ennemiesPerWaveSide = 2
 
-var corruption_speeds = [10, 12, 18, 23, 35]
+var corruption_speeds = [12, 14, 18, 23, 35]
 var flag = [true, true, true]
 var step = [60, 30, 15]
 
@@ -39,10 +37,6 @@ func CorruptionProgress():
 		get_parent().get_node("AudioPesant").play()
 		get_parent().get_node("AudioPesant").get_node("AnimationPlayer").play("FadeIn")
 		triggerPesant = false
-	elif corruptionLevel >= valHappy and triggerHappy:
-		get_parent().get_node("AudioHappy").play()
-		get_parent().get_node("AudioHappy").get_node("AnimationPlayer").play("FadeIn")
-		triggerHappy = false
  
 	$LeftCorruption.rect_size += Vector2(Global.CELL_SIZE, 0)
 	$RightCorruption.rect_size += Vector2(Global.CELL_SIZE, 0)

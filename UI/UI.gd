@@ -6,18 +6,18 @@ var TextureResearchIcon = { "Sky_is" : preload("res://Assets/Pixel Art/Icones/ic
 }
 
 var Ski_is_research_cost = [50, 100, 200, 500, 1000, 2000, 5000, 10000, 20000, 500000]
-var Ski_is_research_time = [10, 20, 30, 40, 50, 60, 120, 240, 480, 960]
+var Ski_is_research_time = [10, 20, 30, 40, 50, 60, 120, 120, 240, 240]
 var Sky_is_research_bonus = [2, 2, 3, 3, 4, 5, 5, 6, 12, 18]
 var Ski_is_level = 0
 const MAX_SKY_LEVEL = 9
 
 var Pisa_research_cost = [50, 200, 1000, 4, 5, 6, 7, 8, 9, 10]
-var Pisa_research_time = [30, 120, 480]
+var Pisa_research_time = [30, 60, 120]
 var Pisa_level = 0
 const MAX_PISA_LEVEL = 3
 
 var Rocket_research_cost = [75000]
-var Rocket_research_time = [480]
+var Rocket_research_time = [240]
 var Rocket_level = 0
 #var Rocket_level = 1
 const MAX_ROCKET_LEVEL = 1
@@ -45,7 +45,6 @@ func _ready():
 	$"BatimentsContainrer/Generator/CostContainer2/MineraiContainer/- XXX".text = str("- ", Global.COST_GENERATEUR)
 	$"BatimentsContainrer/Laboratory/CostContainer3/EnergieContainer/- XXX".text = str("- ", Global.ENERGY_LAB)
 	$"BatimentsContainrer/Laboratory/CostContainer3/MineraiContainer/- XXX".text = str("- ", Global.COST_LAB)
-
 #-------INITIALISATION DU TIMER POUR "Remaining Time"------------------------------
 
 	var total_game_time = Global.GRID_LENGHT/2
@@ -199,6 +198,8 @@ func _on_Upgrade_Limit_pressed():
 		$ResearchAndLoadingContainer/ResearchButton.visible = false
 		$ResearchAndLoadingContainer/LifeBar.update(0, 100)
 		$SecondTimer.start()
+		if Ski_is_level == 7 and get_parent().get_parent().get_node("AudioPesant").playing == false:
+			get_parent().get_parent().get_node("Music").play()
 
 func _on_Pisa_pressed():
 #On check d'abord pour voir si le joueur peut lancer la recherche	
@@ -245,11 +246,11 @@ func update_loading_bar():
 func on_research_over(cancel = false):
 	$GlobalTimer.stop()
 	$SecondTimer.stop()
-	$AudioStreamPlayer.play()
 	$IconResearch.visible = false
 	$ResearchAndLoadingContainer/LifeBar.visible = false
 	$ResearchAndLoadingContainer/ResearchButton.visible = true
 	if cancel == false:
+		$AudioStreamPlayer.play()
 		if current_research == "Sky_is":
 			Global.hauteurMaxDeConstruction += Sky_is_research_bonus[Ski_is_level]
 			Ski_is_level += 1
